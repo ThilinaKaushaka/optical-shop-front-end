@@ -1,13 +1,14 @@
+<script src="app.js"></script>
 <div class="custom-sidebar">
     <div class="custom-logo-details">
-        <i class="bx bx-bowl-hot custom-icon bx-tada"></i>
-        <div class="custom-logo-name">Mos Burgers</div>
+        <i class="bx bx-glasses-alt custom-icon bx-tada" ></i>
+        <div class="custom-logo-name">Optical Shop</div>
         <i class="bx bx-menu" id="custom-btn"></i>
     </div>
     <ul class="custom-nav-list">
         <li>
             <i class="bx bx-search"></i>
-            <input type="text" placeholder="product id or name" />
+            <input type="text" placeholder="product id" />
             <span class="custom-tooltip">Search </span>
         </li>
         <li>
@@ -18,7 +19,7 @@
             <span class="custom-tooltip">Dashboard</span>
         </li>
         <li>
-            <a href="#">
+            <a href="/customer-panel">
                 <i class="bx bx-user bx-tada-hover" id="btn-customer"></i>
                 <span class="custom-links-name">Customer</span>
             </a>
@@ -79,7 +80,13 @@
     </ul>
 </div>
 
-<section class="custom-home-section" id="custom-home-section">
+<section class="custom-home-section bg-gradient-to-r from-cyan-950 from-cyan-700 from-cyan-900" id="custom-home-section">
+    
+    <router-outlet></router-outlet>
+
+
+
+
 
 
 

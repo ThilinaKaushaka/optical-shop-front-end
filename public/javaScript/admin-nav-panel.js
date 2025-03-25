@@ -1,3 +1,6 @@
+console.log("XXXXXXX");
+
+
 let customSidebar = document.querySelector(".custom-sidebar");
 let customCloseBtn = document.querySelector("#custom-btn");
 let customSearchBtn = document.querySelector(".bx-search");

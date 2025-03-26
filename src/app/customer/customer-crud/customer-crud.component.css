@@ -38,12 +38,22 @@
     transition-delay: calc(var(--index) * .05s);
 }
 
+
 .wave-group .input:focus~label .label-char,
 .wave-group .input:valid~label .label-char {
     transform: translateY(-20px);
     font-size: 14px;
     color: #5264AE;
 }
+
+.up{
+    transform: translateY(-20px);
+    font-size: 14px;
+    color: #5264AE;  
+}
+
+
+
 
 .wave-group .bar {
     position: relative;
@@ -76,3 +86,8 @@
 .wave-group .input:focus~.bar:after {
     width: 50%;
 }
+
+
+
+
+  

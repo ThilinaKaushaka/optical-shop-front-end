@@ -1,6 +1,6 @@
 <div class="group relative flex w-96 flex-col rounded-xl  p-4  transition-all duration-300 hover:scale-[1.02]"
     style="height: 560px;">
-    
+
     <div class="absolute inset-px rounded-[11px] bg-cyan-950"></div>
 
     <div class="relative">
@@ -8,14 +8,14 @@
 
             <div class="flex items-center gap-2">
 
-                
 
-                <div
+
+                <div #btnUpdate
                     class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-600 to-teal-300">
                     <i class='bx bxs-edit ' style='color:#ffffff'></i>
                 </div>
 
-                <div
+                <div #btnAdd
                     class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-600 to-teal-300">
                     <i class='bx bx-add-to-queue' style='color:#ffffff'></i>
                 </div>
@@ -33,30 +33,30 @@
 
 
                 <div class="wave-group">
-                    <input required="" type="text"
-                        class="input border p-2 outline-none focus:ring-0 focus:border-gray-400" style="width: 160px;"> 
+                    <input #txtId type="text" required="" type="text"
+                        class="input border p-2 outline-none focus:ring-0 focus:border-gray-400" style="width: 160px;">
                     <span class="bar"></span>
-                    <label class="label">
-                        <span class="label-char" style="--index: 0">I</span>
-                        <span class="label-char ml-1" style="--index: 2">D</span>
+                    <label #lblId class="label">
+                        <span  #i class="label-char" style="--index: 0">I</span>
+                        <span  #d class="label-char ml-1" style="--index: 2">D</span>
                     </label>
                 </div>
             </div>
 
-            <div
-                    class="col-span-2 m-auto flex h-11 w-11 items-center justify-center rounded-lg bg-gradient-to-br from-teal-700 to-teal-300">
-                    <i class='bx bx-search-alt bx-tada' style='color:#fdfbfb;'></i>
-                </div>
+            <div #btnSearch
+                class="col-span-2 m-auto flex h-11 w-11 items-center justify-center rounded-lg bg-gradient-to-br from-teal-700 to-teal-300">
+                <i class='bx bx-search-alt bx-tada' style='color:#fdfbfb;'></i>
+            </div>
 
         </div>
 
         <div class="mb-4 h-85  rounded-lg bg-slate-900/50 p-3 pt-4 pl-12">
-            
+
             <div class="wave-group">
-                <input required="" type="text"
+                <input #txtName type="text" required="" type="text"
                     class="input border p-2 outline-none focus:ring-0 focus:border-gray-400">
                 <span class="bar"></span>
-                <label class="label">
+                <label #lblName  class="label">
                     <span class="label-char" style="--index: 0">N</span>
                     <span class="label-char " style="--index: 1">a</span>
                     <span class="label-char " style="--index: 2">m</span>
@@ -65,10 +65,10 @@
             </div>
 
             <div class="wave-group mt-4">
-                <input required="" type="text"
+                <input #txtAddress type="text" required="" type="text"
                     class="input border p-2 outline-none focus:ring-0 focus:border-gray-400">
                 <span class="bar"></span>
-                <label class="label">
+                <label #lblAddress  class="label">
                     <span class="label-char" style="--index: 0">A</span>
                     <span class="label-char " style="--index: 1">d</span>
                     <span class="label-char " style="--index: 2">d</span>
@@ -80,10 +80,10 @@
             </div>
 
             <div class="wave-group mt-4">
-                <input required="" type="text"
+                <input #txtEmail type="text" required="" type="text"
                     class="input border p-2 outline-none focus:ring-0 focus:border-gray-400">
                 <span class="bar"></span>
-                <label class="label">
+                <label #lblEmail  class="label">
                     <span class="label-char" style="--index: 0">E</span>
                     <span class="label-char ml-1" style="--index: 1"></span>
                     <span class="label-char " style="--index: 2">m</span>
@@ -94,10 +94,10 @@
             </div>
 
             <div class="wave-group mt-4">
-                <input required="" type="text"
+                <input #txtNic type="text" required="" type="text"
                     class="input border p-2 outline-none focus:ring-0 focus:border-gray-400">
                 <span class="bar"></span>
-                <label class="label">
+                <label #lblNic  class="label">
                     <span class="label-char" style="--index: 0">N</span>
                     <span class="label-char " style="--index: 1">i</span>
                     <span class="label-char " style="--index: 2">c</span>
@@ -105,10 +105,10 @@
             </div>
 
             <div class="wave-group mt-4">
-                <input required="" type="text"
+                <input #txtTpNo type="text" required="" type="text"
                     class="input border p-2 outline-none focus:ring-0 focus:border-gray-400">
                 <span class="bar"></span>
-                <label class="label">
+                <label #lblTpNo  class="label">
                     <span class="label-char" style="--index: 0">t</span>
                     <span class="label-char " style="--index: 1">p</span>
                     <span class="label-char ml-1" style="--index: 2">N</span>
@@ -120,17 +120,29 @@
         </div>
 
         <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                
+
+            <div class="flex items-center gap-2 ml-2">
+                <h1 #regDateH1 class="font-bold text-gray-400">Reg.Date : {{this.regDateTxt}}
+                </h1>
             </div>
 
-            <button
-                class="flex items-center gap-1 rounded-lg bg-gradient-to-r from-emerald-700 to-emerald-500 px-3 py-1 text-xs font-medium text-white transition-all duration-300 hover:from-indigo-600 hover:to-purple-600">
+            <button #btnSaveUpdate
+                class="hidden flex items-center gap-1 rounded-lg bg-gradient-to-r from-emerald-700 to-emerald-500 px-3 py-1 text-xs font-medium text-white transition-all duration-300 hover:from-indigo-600 hover:to-purple-600">
+                Update
+                <svg class="h-3 w-3 bx-fade-right" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
+
+            <button #btnSaveCustomer
+                class="hidden flex items-center gap-1 rounded-lg bg-gradient-to-r from-emerald-700 to-emerald-500 px-3 py-1 text-xs font-medium text-white transition-all duration-300 hover:from-indigo-600 hover:to-purple-600">
                 Save
                 <svg class="h-3 w-3 bx-fade-right" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                 </svg>
             </button>
+
+
         </div>
     </div>
 </div>

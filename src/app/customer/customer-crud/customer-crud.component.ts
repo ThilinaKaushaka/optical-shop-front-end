@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component ,ViewChild,ElementRef, AfterViewInit, OnInit} from '@angular/core';
 import { Customer } from '../../model/Customer';
+import { CustomerService } from '../../service/CustomerService';
 
 @Component({
   selector: 'app-customer-crud',
@@ -11,7 +12,7 @@ import { Customer } from '../../model/Customer';
 export class CustomerCrudComponent implements AfterViewInit {
 
   
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,private customerService:CustomerService) {
   
   }
   
@@ -105,10 +106,8 @@ export class CustomerCrudComponent implements AfterViewInit {
     let itemRegex = /^CUS-\d+$/;
     this.txtIdValue=this.txtId.nativeElement.value;
     if(itemRegex.test(this.txtIdValue.toUpperCase()) ){
-      
-      this.http.get<Customer>(`http://localhost:8080/customer/get-by-id?id=${this.getCustomerId(this.txtIdValue)}` ).subscribe(res=>{          
+      this.customerService.searchCustomer(this.getCustomerId(this.txtIdValue)).subscribe(res=>{          
         this.enableTxtId();
-
         this.txtName.nativeElement.value=res.name;  
         this.txtAddress.nativeElement.value=res.address;
         this.txtPhone.nativeElement.value=res.tpNo;
@@ -121,11 +120,7 @@ export class CustomerCrudComponent implements AfterViewInit {
   }
 
   upate():void{
-    let customerUpate:Customer=new Customer(this.getCustomerId(this.txtId.nativeElement.value),this.txtName.nativeElement.value,this.txtAddress.nativeElement.value,this.txtPhone.nativeElement.value,this.txtEmail.nativeElement.value,this.txtNic.nativeElement.value,new Date(this.regDateTxt));
-
-    this.http.put('http://localhost:8080/customer/update',customerUpate).subscribe(res=>{
-
-    });
+    this.customerService.customerUpdate(new Customer(this.getCustomerId(this.txtId.nativeElement.value),this.txtName.nativeElement.value,this.txtAddress.nativeElement.value,this.txtPhone.nativeElement.value,this.txtEmail.nativeElement.value,this.txtNic.nativeElement.value,new Date(this.regDateTxt)));
     this.clearAll();
     this.enableTxtId();
     this.disableAll();
@@ -135,9 +130,8 @@ export class CustomerCrudComponent implements AfterViewInit {
 
 
   add():void{
-    
-    let addCustomer:Customer=new Customer(null,this.txtName.nativeElement.value,this.txtAddress.nativeElement.value,this.txtPhone.nativeElement.value,this.txtEmail.nativeElement.value,this.txtNic.nativeElement.value,null);
-    this.http.post('http://localhost:8080/customer/add',addCustomer).subscribe(res=>{});
+    this.clearAll();
+    this.customerService.customerAdd(new Customer(null,this.txtName.nativeElement.value,this.txtAddress.nativeElement.value,this.txtPhone.nativeElement.value,this.txtEmail.nativeElement.value,this.txtNic.nativeElement.value,null));
     this.enableTxtId();
     this.clearAll();
     this.disableSave();

@@ -76,6 +76,7 @@ export class CustomerCrudComponent implements AfterViewInit {
         this.disableTxtId();
         this.enableAll();
         this.enableUpdate();
+        this.disableSave();
       }
     });
 
@@ -84,10 +85,11 @@ export class CustomerCrudComponent implements AfterViewInit {
     });
 
     this.btnAdd.nativeElement.addEventListener('click',()=>{
-      
+        this.clearAll();
         this.disableTxtId();
         this.enableAll();
         this.enableSave();
+        this.disableUpdate();
         
     });
 
@@ -120,7 +122,9 @@ export class CustomerCrudComponent implements AfterViewInit {
   }
 
   upate():void{
-    this.customerService.customerUpdate(new Customer(this.getCustomerId(this.txtId.nativeElement.value),this.txtName.nativeElement.value,this.txtAddress.nativeElement.value,this.txtPhone.nativeElement.value,this.txtEmail.nativeElement.value,this.txtNic.nativeElement.value,new Date(this.regDateTxt)));
+    this.customerService.customerUpdate(new Customer(this.getCustomerId(this.txtId.nativeElement.value),this.txtName.nativeElement.value,this.txtAddress.nativeElement.value,this.txtPhone.nativeElement.value,this.txtEmail.nativeElement.value,this.txtNic.nativeElement.value,new Date(this.regDateTxt))).subscribe(res=>{
+
+    });
     this.clearAll();
     this.enableTxtId();
     this.disableAll();
@@ -130,8 +134,11 @@ export class CustomerCrudComponent implements AfterViewInit {
 
 
   add():void{
+    
+    this.customerService.customerAdd(new Customer(null,this.txtName.nativeElement.value,this.txtAddress.nativeElement.value,this.txtPhone.nativeElement.value,this.txtEmail.nativeElement.value,this.txtNic.nativeElement.value,null)).subscribe(res=>{
+      
+    });
     this.clearAll();
-    this.customerService.customerAdd(new Customer(null,this.txtName.nativeElement.value,this.txtAddress.nativeElement.value,this.txtPhone.nativeElement.value,this.txtEmail.nativeElement.value,this.txtNic.nativeElement.value,null));
     this.enableTxtId();
     this.clearAll();
     this.disableSave();
@@ -188,6 +195,7 @@ export class CustomerCrudComponent implements AfterViewInit {
     this.txtPhone.nativeElement.value='';
     this.txtNic.nativeElement.value='';
     this.txtEmail.nativeElement.value='';
+    this.regDateTxt='';
   }
 
 

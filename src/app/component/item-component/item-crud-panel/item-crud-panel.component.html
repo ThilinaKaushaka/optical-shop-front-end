@@ -1,0 +1,276 @@
+<div class="crud group relative flex w-96 flex-col  p-4  transition-all duration-300 hover:scale-[1.02]">
+
+    <div class="absolute inset-px bg rounded-3xl"></div>
+
+
+    <div class="relative">
+        <div class="mb-4 flex items-center justify-between relative bottom-3">
+
+            <div class="flex items-center gap-2">
+
+                <p class=" text-amber-50 text-xl font-bold mr-5 mb-4">Item Details</p>
+
+                <div class="toggle-btn-wrapper">
+                    <div class="toggle-btn-holder">
+                        <input type="checkbox" id="toggleAction" class="toggle-btn-input" />
+                        <label for="toggleAction" class="toggle-btn-label">
+                            <div class="toggle-btn-core">
+
+                                <div #btnAdd class="toggle-btn-face toggle-btn-front">
+                                    <img
+                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAMhJREFUSEvdlU0KwkAMhb93DkEQF3obL+PGG+iFPIgbd6LgPSIVRtrq/GRsLTjbJvmS18wbMfLRyPWJAsxsA+yBtbOJM7CVdGzyUoA7MHMWD+EXScscwJ4BkktGM+vkpSaYDtDvsi3jIBNUAfpJniJFE+QA4Xtsq8IyRCWaHJCSYRCJ/guQso/qn1zqSR7ADZiXFu7FXSUtOmb3YU0buz4AKyfkBOze7Dp1c52ATvjLTX8BqNI89160J6jSvBjwjc6pXNdzWNPEA2xzzhmu6jNTAAAAAElFTkSuQmCC" />
+                                </div>
+
+
+                                <div #btnSaveAdd class="toggle-btn-face toggle-btn-back">
+                                    <svg fill="white" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M9 19l-7-7 1.41-1.41L9 16.17l11.29-11.3L22 6l-13 13z" />
+                                    </svg>
+                                </div>
+
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="flip-button-container relative right-2">
+                    <div class="flip-button-wrapper">
+                        <input class="flip-button-input" id="flipButton" type="checkbox" />
+                        <label class="flip-button-label" for="flipButton">
+
+                            <div class="flip-button">
+
+                                <div #btnUpdate class="flip-button-front">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABXUlEQVRIS2NkoDFgpLH5DFSz4P///91Ax75kZGTsQXY0igVARf5AyQ4g1sDjs/9AuVigQUthaoD6JgPZOVB+KbIl6BY8ASqSJtFwMaD6y0AMomGgGmhJG4iDbgHIdQxASaKCDuhyAaDSD0BaBajtMBBLQG2oAoq3U2QB0NASoAEgbAU07B6QrwRkHwPiFiB/CswrZPkAaFgF0ACwC4HgORDbAQ29AxTnB9IfkYOYZAuAhlQCDQCHLxIAWaILNPwtmjhpcQANFlByRAc9QMNLsYgTbwGxhgPVeQAt20FSHAA1NQA11BNyOchwoJr1QAs4ibYAqAlkMMgCgsECVPsDqIgdOZkTjGSgJnDeQANYwxymllILGoAGNGKLUGpYgFLOoFtClgXYXIpLbGRY8BDofTlSggWL2gfARKCIKx+AKpxOIFYn05JLQH2VQAu2YbWATEPxaiOqYqHEYppbAADch8gZSLqSwwAAAABJRU5ErkJggg=="
+                                        alt="Edit" width="24" height="24" />
+                                </div>
+
+                                <div #btnUpdateSave class="flip-button-back">
+                                    <svg fill="white" height="32" width="32" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 19l-7-7 1.41-1.41L9 16.17l11.29-11.3L22 6l-13 13z"
+                                            class="flip-icon"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+
+                <div class="mb-8">
+                    <label for="category"
+                        class="ml-2 block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label>
+                    <button id="dropdownDefaultButton1" data-dropdown-toggle="dropdown1"
+                        class=" w-43  h-11 text-white bg-gradient-to-br from-blue-500 to-blue-800 hover:bg-blue-800  focus:outline-none focus:ring-blue-300 font-medium rounded-b-xl rounded-t-xl text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800  hover:scale-105 hover:transition-all hover:duration-[2000ms] hover:ease-out active:scale-95 active:duration-100 transition-transform duration-100 ease-in-out"
+                        type="button">{{this.selectItemCategiry}} <svg class="w-2.5 h-2.5 ms-3 absolute ml-32"
+                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 1 4 4 4-4" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Dropdown menu -->
+                <div id="dropdown1"
+                    class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
+                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+
+                        <li (click)="categoryChange(category)" *ngFor="let category of itemCategories"
+                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                            {{category}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-4 grid grid-cols-6 gap-4 relative bottom-12">
+            <div class="rounded-2xl bg-slate-900/50 p-3 col-span-4 h-16">
+                <div class="wave-group mt-4 relative bottom-4">
+                    <input #txtAddress type="text" required="" type="text"
+                        class="input border p-2 outline-none focus:ring-0 focus:border-gray-400">
+                    <span class="bar"></span>
+                    <label #lblAddress class="label">
+                        <span class="label-char" style="--index: 0">I</span>
+                        <span class="label-char " style="--index: 1">t</span>
+                        <span class="label-char " style="--index: 2">e</span>
+                        <span class="label-char " style="--index: 3">m</span>
+                        <span class="label-char " style="--index: 4">&nbsp;</span>
+                        <span class="label-char " style="--index: 5">i</span>
+                        <span class="label-char " style="--index: 6">d</span>
+
+                    </label>
+                </div>
+            </div>
+
+            <div #btnSearch
+                class="col-span-2 m-auto flex h-13 w-13 items-center justify-center rounded-2xl bg-gradient-to-br from-teal-700 to-teal-300 hover:scale-110 hover:transition-all hover:duration-[2000ms] hover:ease-out active:scale-95 active:duration-100 transition-transform duration-100 ease-in-out">
+                <img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAACR0lEQVRIS7XV24uNURjH8dnIhQYhDRc0DuFijMkpFzMKZUJcuEJRRtIUN8jF/ANDyiHKUMqQlD9ArggJFwxKinLI5IIccj5vn6femdiH9901e1Z9W2u/z+95fmu9611r52oGueUGuX5NWYN8Pj+Z+XqsxJxkIj36CziXy+V6K5lckYHCoySewZqUAnmx82hj9CXN6D8DxUcQ30IDvuM4DivyJIqIT9XtxFYMT7Qt4j/LmRQanCbciBdolfiwVCKjRs8vYiIO0O3KNJA0m+g+fmGhpB7PJhh3oTkpcFW/Tey12GLjK/iBKZ69LGXSvwIJRwi24yjxjuSV7NbvL0iMzW2keSfnrPEGdPjdmWXwmGA6Gogf9IkVWWscr2oIoshqnKLZLLbE+BKu+R0rKmr/ruCzaGzyUOI/pcQK1nv+FL00k/wea/wGb/0el2XwgWAkaonDLLMxqCX6iE9yIjd1BXdF40DNI76TWZ2AwSLdDdyWMz/LYB/BHnQRt1do0E23CZ1yOrIMZhLEZv7GAgmxorLN7FsE47ON/ZpG/yzVIIKSTura8BzLJT0qlUTX5HkctLqsFaddFd8kH8NBRnGyYwIzdHFVbMGwxPxmMpnY7KJW6rIbTRUHaFXaGxLbi1bMRdyyS03kfWFO2nVdTxyndAXi7vmK+LriMuyOd25FY4wvI76+e1jmeZyL/jbgP5zksF1XcRbiNmhm8qrPYcAGUYjJeF18UWESl+GJqhokJnHzrlP8UFVfUeGmVrzJWYmVxquyB2lmfwF+xM4Z1qygFQAAAABJRU5ErkJggg==" />
+            </div>
+        </div>
+
+
+
+        <div class=" bg-slate-900/50 rounded-2xl d-width dpl">
+
+            <div class=" grid grid-cols-12 place-items-center relative bottom-2">
+                <div class="wave-group mt-4 col-span-5">
+                    <input #txtAddress type="text" required="" type="text"
+                        class=" input border p-2 outline-none focus:ring-0 focus:border-gray-400" style="width: 140px;">
+                    <span class="bar"></span>
+                    <label #lblAddress class="label">
+                        <span class="label-char" style="--index: 0">N</span>
+                        <span class="label-char " style="--index: 1">a</span>
+                        <span class="label-char " style="--index: 2">m</span>
+                        <span class="label-char " style="--index: 3">e</span>
+
+                    </label>
+                </div>
+
+                <div class="wave-group mt-4 col-span-5">
+                    <input #txtAddress type="text" required="" type="text"
+                        class=" input border p-2 outline-none focus:ring-0 focus:border-gray-400" style="width: 140px;">
+                    <span class="bar"></span>
+                    <label #lblAddress class="label">
+                        <span class="label-char" style="--index: 0">B</span>
+                        <span class="label-char " style="--index: 1">r</span>
+                        <span class="label-char " style="--index: 2">a</span>
+                        <span class="label-char " style="--index: 3">n</span>
+                        <span class="label-char " style="--index: 4">d</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-12 place-items-center relative bottom-3">
+
+                <div class="wave-group mt-4 col-span-5">
+                    <input #txtAddress type="text" required="" type="number" min="0"
+                        class=" input border p-2 outline-none focus:ring-0 focus:border-gray-400" style="width: 140px;">
+                    <span class="bar"></span>
+                    <label #lblAddress class="label">
+                        <span class="label-char" style="--index: 0">R</span>
+                        <span class="label-char " style="--index: 1">s</span>
+                        <span class="label-char " style="--index: 2">&nbsp;</span>
+                        <span class="label-char " style="--index: 3">:</span>
+                        <span class="label-char " style="--index: 4">&nbsp;</span>
+                    </label>
+                </div>
+
+                <div class="wave-group mt-4 col-span-5">
+                    <input #txtAddress required="" type="number" min="0"
+                        class=" input border p-2 outline-none focus:ring-0 focus:border-gray-400" style="width: 140px;">
+                    <span class="bar"></span>
+                    <label #lblAddress class="label">
+                        <span class="label-char" style="--index: 0">Q</span>
+                        <span class="label-char " style="--index: 1">u</span>
+                        <span class="label-char " style="--index: 2">a</span>
+                        <span class="label-char " style="--index: 3">n</span>
+                        <span class="label-char " style="--index: 4">t</span>
+                        <span class="label-char " style="--index: 5">i</span>
+                        <span class="label-char " style="--index: 6">t</span>
+                        <span class="label-char " style="--index: 7">y</span>
+                    </label>
+                </div>
+
+                <div class="col-span-2 ">
+                    <div class="grid grid-rows-2 place-items-center mr-5">
+                        <p class="avb">Available</p>
+                        <label class="avb-panel">
+                            <input checked="" type="checkbox">
+                            <span class="checkbox"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div #itemDetailsTab>
+            
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="grid grid-cols-1 place-items-center mt-5">
+                <div>
+                    <label for="message" class="avb">Discription</label>
+                    <textarea id="message" rows="4"
+                        class="mt-2 block p-2.5 w-93 h-20 text-sm text-gray-900  rounded-lg bg-transparent dark:placeholder-gray-400 dark:text-white focus:border-0 focus:border-transparent"
+                        placeholder="Write your thoughts here..."></textarea>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+<button id="dropdownDefaultButtonFMx" data-dropdown-toggle="dropdownFMx" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown button <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+    </svg>
+    </button>
+    
+    <!-- Dropdown menu -->
+    <div id="dropdownFMx" class="z-100 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
+        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
+          </li>
+        </ul>
+    </div>
+
+    
+    

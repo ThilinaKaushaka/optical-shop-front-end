@@ -1,0 +1,456 @@
+/* From Uiverse.io by MohamedSSuhail */ 
+.crud {
+    
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    width: 450px;
+    height:650px;
+    padding: 25px;
+    background: var(--bg-color);
+    
+    
+  }
+
+
+  .dpl{
+    position: relative;
+    bottom: 52px;
+    height: 454px;
+  }
+  
+/*=================================*/
+
+/* Container Styles */
+.toggle-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.toggle-btn-holder {
+  display: inline-block;
+}
+
+/* Hidden checkbox */
+.toggle-btn-input {
+  position: absolute;
+  opacity: 0;
+}
+
+/* Label as click target */
+.toggle-btn-label {
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Core button container */
+.toggle-btn-core {
+  width: 45px;
+  height: 45px;
+  perspective: 1000px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease;
+}
+
+/* Both faces */
+.toggle-btn-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Front face (edit icon) */
+.toggle-btn-front {
+  background: linear-gradient(135deg, #f37878, #d80303);
+  transform: rotateY(0deg);
+}
+
+/* Back face (checkmark) */
+.toggle-btn-back {
+  background: linear-gradient(135deg, #86ff98, #00fc71);
+  transform: rotateY(180deg);
+}
+
+/* Hover effect */
+.toggle-btn-label:hover .toggle-btn-core {
+  transform: scale(1.08);
+}
+
+/* Active state (click) */
+.toggle-btn-label:active .toggle-btn-core {
+  transform: scale(0.95);
+}
+
+/* Checked state - flip animation */
+.toggle-btn-input:checked + .toggle-btn-label .toggle-btn-front {
+  transform: rotateY(180deg);
+}
+
+.toggle-btn-input:checked + .toggle-btn-label .toggle-btn-back {
+  transform: rotateY(360deg);
+}
+
+/* Focus state */
+.toggle-btn-input:focus-visible + .toggle-btn-label .toggle-btn-core {
+  outline: 2px solid #86ff98;
+  outline-offset: 2px;
+}
+
+/* Checkmark bounce animation */
+@keyframes bounce-confirm {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.toggle-btn-input:checked + .toggle-btn-label .toggle-btn-back svg {
+  animation: bounce-confirm 0.4s ease;
+}
+
+/* Icon styling */
+.toggle-btn-face img,
+.toggle-btn-face svg {
+  width: 24px;
+  height: 24px;
+}
+
+.toggle-btn-face svg {
+  fill: white;
+}
+
+
+/*===============================*/
+
+
+.flip-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+}
+
+.flip-button-input {
+  display: none;
+}
+
+.flip-button-label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.flip-button {
+  width: 45px;
+  height: 45px;
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.flip-button-front,
+.flip-button-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.flip-button-front {
+  background: linear-gradient(135deg, #f3e778, #d88303);
+  transform: rotateY(0deg);
+}
+
+.flip-button-back {
+  background: linear-gradient(135deg, #86ff98, #00fc71);
+  transform: rotateY(180deg);
+}
+
+
+.flip-button-wrapper:hover .flip-button {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-out;
+}
+
+
+.flip-button-input:checked + .flip-button-label .flip-button-front {
+  transform: rotateY(180deg);
+}
+
+.flip-button-input:checked + .flip-button-label .flip-button-back {
+  transform: rotateY(360deg);
+}
+
+
+.flip-button-input:focus-visible + .flip-button-label .flip-button {
+  outline: 2px solid #86ff98;
+  outline-offset: 2px;
+}
+
+.flip-button-label:active .flip-button {
+  transform: scale(0.95);
+}
+
+
+.flip-icon {
+  stroke: white;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+.flip-button-input:checked + .flip-button-label .flip-button-back svg {
+  animation: bounce 0.4s ease;
+}
+
+/*=====================================*/
+
+
+.cus-h{
+  height: 469px;
+}
+
+
+.select {
+  width: 150px;
+  cursor: pointer;
+  position: relative;
+  transition: 300ms;
+  color: white;
+  overflow: hidden;
+}
+
+.selected {
+  background-color:#ffffff13;
+  padding: 5px;
+  margin-bottom: 3px;
+  border-radius: 5px;
+  position: relative;
+  
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.arrow {
+  position: relative;
+  right: 0px;
+  height: 10px;
+  transform: rotate(-90deg);
+  width: 25px;
+  fill: white;
+  z-index: 100000;
+  transition: 300ms;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #ffffff13;
+  position: relative;
+  top: -100px;
+  opacity: 0;
+  transition: 300ms;
+  position: relative;
+  z-index: 100000;
+}
+
+.select:hover > .options {
+  opacity: 1;
+  top: 0;
+}
+
+.select:hover > .selected .arrow {
+  transform: rotate(0deg);
+}
+
+.option {
+  border-radius: 5px;
+  padding: 5px;
+  transition: 300ms;
+  background-color: #2a2f3b00;
+  width: 150px;
+  font-size: 15px;
+}
+.option:hover {
+  background-color: #323741;
+}
+
+.options input[type="radio"] {
+  display: none;
+}
+
+.options label {
+  display: inline-block;
+}
+.options label::before {
+  content: attr(data-txt);
+}
+
+
+.wave-group {
+  position: relative;
+}
+
+
+
+.wave-group .input {
+  font-size: 15px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 200px;
+  border: none;
+  border-bottom: 1px solid #515151;
+  color:aliceblue;
+  background: transparent;
+}
+
+
+
+.wave-group .input:focus {
+  outline: none;
+  border: none;
+  
+}
+
+.wave-group .label {
+  color: #999;
+  font-size: 15px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  display: flex;
+}
+
+.wave-group .label-char {
+  transition: 0.2s ease all;
+  transition-delay: calc(var(--index) * .05s);
+}
+
+
+.wave-group .input:focus~label .label-char,
+.wave-group .input:valid~label .label-char {
+  transform: translateY(-20px);
+  font-size: 14px;
+  color: #5264AE;
+}
+
+.up{
+  transform: translateY(-20px);
+  font-size: 14px;
+  color: #5264AE;  
+}
+
+
+
+
+.wave-group .bar {
+  position: relative;
+  display: block;
+  width: 96%;
+}
+
+.wave-group .bar:before,
+.wave-group .bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #5264AE;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.wave-group .bar:before {
+  left: 50%;
+}
+
+.wave-group .bar:after {
+  right: 50%;
+}
+
+.wave-group .input:focus~.bar:before,
+.wave-group .input:focus~.bar:after {
+  width: 50%;
+}
+
+.d-width{
+  width: 400px;
+}
+
+
+
+
+
+/*=======================================*/ 
+.avb-panel {
+  display: block;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.avb-panel input[type='checkbox'] {
+  position: absolute;
+  transform: scale(0);
+}
+
+.avb-panel input[type='checkbox']:checked ~ .checkbox {
+  transform: rotate(45deg);
+  width: 14px;
+  margin-left: 5px;
+  border-color: #24c78e;
+  border-width: 5px;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-radius: 0;
+}
+
+.checkbox {
+  display: block;
+  width: inherit;
+  height: inherit;
+  border: solid 3px #2a2a2ab7;
+  border-radius: 6px;
+  transition: all 0.375s;
+}
+
+.avb{
+  color: rgba(250, 235, 215, 0.555);
+  font-size: 14px;
+  font-weight:100;
+}

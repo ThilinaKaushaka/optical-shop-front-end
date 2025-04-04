@@ -1,0 +1,178 @@
+<!--private Integer id;*********
+    private Integer itemId;*******************
+    private ContactLensType type;***************
+    private ContactLensDuration duration;*****************
+    private ContactLensMaterial material;*****************
+    private Double waterContent;***********************
+    private Double baseCurve;**************
+    private Double diameter;****************
+    private Double power;*******************
+    private Double cylinder;
+    private Integer axis;********************
+    private String colour;
+    private Boolean uvProtection;*******-->
+
+
+
+    <div class="grid grid-rows-5">
+
+        <div class="grid grid-cols-3 place-items-center">
+
+            <div class="wave-group ml-10 mb-2">
+                <input #txtFrameId required="" type="text" class=" input border p-2 outline-none focus:ring-0 focus:border-gray-400" style="width: 140px;">
+                <span class="bar"></span>
+                <label #lblAddress class="label">
+                    <span class="label-char" style="--index: 0">F</span>
+                    <span class="label-char " style="--index: 1">r</span>
+                    <span class="label-char " style="--index: 2">m</span>
+                    <span class="label-char " style="--index: 3">e</span>
+                    <span class="label-char " style="--index: 4">&nbsp;</span>
+                    <span class="label-char " style="--index: 5">i</span>
+                    <span class="label-char " style="--index: 6">d</span>
+                </label>
+            </div>
+    
+            <mat-form-field class="w-29 ml-20">
+                <mat-label>Type</mat-label>
+                <mat-select>
+                    <mat-option  [value]="selectedType" (click)="changeType(type)" *ngFor="let type of typeArray">{{type}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        
+            <div class="grid grid-rows-2 place-items-center ml-12">
+                <p class="avb">UV prot</p>
+                <label class="avb-panel">
+                    <input checked="" type="checkbox">
+                    <span class="checkbox"></span>
+                </label>
+            </div>
+
+        </div>
+
+        <div class="grid grid-cols-2 place-items-center">
+            
+            <mat-form-field class="w-44 ml-3">
+                <mat-label>Material</mat-label>
+                <mat-select>
+                    <mat-option  [value]="selectedMaterial" (click)="changeMaterial(material)" *ngFor="let material of materialArray">{{material}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="w-39">
+                <mat-label>Time duration</mat-label>
+                <mat-select>
+                    <mat-option  [value]="selectedDuration" (click)="changeDuration(duration)" *ngFor="let duration of durationArray">{{duration}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+        </div>
+
+
+        <div class="grid grid-cols-3 place-items-center">
+
+            <div class="wave-group">
+                <input #txtWaterLv required="" type="number" class="w-25 input border p-2 outline-none focus:ring-0 focus:border-gray-400" >
+                <span class="bar"></span>
+                <label #lblAddress class="label">
+                    <span class="label-char" style="--index: 0">W</span>
+                    <span class="label-char " style="--index: 1">a</span>
+                    <span class="label-char " style="--index: 2">t</span>
+                    <span class="label-char " style="--index: 3">e</span>
+                    <span class="label-char " style="--index: 4">r</span>
+                    <span class="label-char " style="--index: 5">&nbsp;</span>
+                    <span class="label-char " style="--index: 6">lv</span>
+                </label>
+            </div>
+
+            <div class="wave-group">
+                <input #txtPower required="" type="number" class="w-24 input border p-2 outline-none focus:ring-0 focus:border-gray-400">
+                <span class="bar"></span>
+                <label #lblAddress class="label">
+                    <span class="label-char" style="--index: 0">P</span>
+                    <span class="label-char " style="--index: 1">o</span>
+                    <span class="label-char " style="--index: 2">w</span>
+                    <span class="label-char " style="--index: 3">e</span>
+                    <span class="label-char " style="--index: 4">r</span>
+                </label>
+            </div>
+
+            <div class="wave-group">
+                <input #txtAxis required="" type="number" class="w-24 input border p-2 outline-none focus:ring-0 focus:border-gray-400">
+                <span class="bar"></span>
+                <label #lblAddress class="label">
+                    <span class="label-char" style="--index: 0">A</span>
+                    <span class="label-char " style="--index: 1">x</span>
+                    <span class="label-char " style="--index: 2">i</span>
+                    <span class="label-char " style="--index: 3">s</span>
+                </label>
+            </div>
+
+
+        </div>
+
+
+
+        <div class="grid grid-cols-3 place-items-center">
+
+            <div class="wave-group">
+                <input #txtAxis required="" type="number" class="w-26 input border p-2 outline-none focus:ring-0 focus:border-gray-400">
+                <span class="bar"></span>
+                <label #lblAddress class="label">
+                    <span class="label-char" style="--index: 0">B</span>
+                    <span class="label-char " style="--index: 1">a</span>
+                    <span class="label-char " style="--index: 2">s</span>
+                    <span class="label-char " style="--index: 3">e</span>
+                    <span class="label-char " style="--index: 5">&nbsp;</span>
+                    <span class="label-char " style="--index: 6">c</span>
+                    <span class="label-char " style="--index: 7">ur</span>
+                </label>
+            </div>
+
+            <div class="wave-group">
+                <input #txtAxis required="" type="number" class="w-28 input border p-2 outline-none focus:ring-0 focus:border-gray-400">
+                <span class="bar"></span>
+                <label #lblAddress class="label">
+                    <span class="label-char" style="--index: 0">D</span>
+                    <span class="label-char " style="--index: 1">i</span>
+                    <span class="label-char " style="--index: 2">a</span>
+                    <span class="label-char " style="--index: 3">m</span>
+                    <span class="label-char " style="--index: 4">e</span>
+                    <span class="label-char " style="--index: 5">t</span>
+                    <span class="label-char " style="--index: 6">e</span>
+                    <span class="label-char " style="--index: 7">r</span>
+                </label>
+            </div>
+            
+            <div class="wave-group">
+                <input #txtAxis required="" type="number" class="w-24 input border p-2 outline-none focus:ring-0 focus:border-gray-400">
+                <span class="bar"></span>
+                <label #lblAddress class="label">
+                    <span class="label-char" style="--index: 0">C</span>
+                    <span class="label-char " style="--index: 1">y</span>
+                    <span class="label-char " style="--index: 2">l</span>
+                    <span class="label-char " style="--index: 3">i</span>
+                    <span class="label-char " style="--index: 4">n</span>
+                    <span class="label-char " style="--index: 5">d</span>
+                    <span class="label-char " style="--index: 6">e</span>
+                    <span class="label-char " style="--index: 7">r</span>
+                </label>
+            </div>
+
+
+        </div>
+
+        <div class="wave-group w-28 ml-3">
+            <input #txtAxis required="" type="text" class="w-24 input border p-2 outline-none focus:ring-0 focus:border-gray-400">
+            <span class="bar"></span>
+            <label #lblAddress class="label">
+                <span class="label-char" style="--index: 0">C</span>
+                <span class="label-char " style="--index: 1">o</span>
+                <span class="label-char " style="--index: 2">l</span>
+                <span class="label-char " style="--index: 3">o</span>
+                <span class="label-char " style="--index: 4">u</span>
+                <span class="label-char " style="--index: 5">r</span>
+            </label>
+        </div>
+    
+    
+    </div>

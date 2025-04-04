@@ -1,10 +1,10 @@
 /* From Uiverse.io by MohamedSSuhail */ 
 .crud {
-    
+    display: grid;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     width: 450px;
-    height:650px;
+    min-height:220px;
     padding: 25px;
     background: var(--bg-color);
     
@@ -13,9 +13,11 @@
 
 
   .dpl{
-    position: relative;
-    bottom: 52px;
-    height: 454px;
+    display: grid;
+
+
+  
+    min-height:254px
   }
   
 /*=================================*/
@@ -408,9 +410,7 @@
   width: 50%;
 }
 
-.d-width{
-  width: 400px;
-}
+
 
 
 

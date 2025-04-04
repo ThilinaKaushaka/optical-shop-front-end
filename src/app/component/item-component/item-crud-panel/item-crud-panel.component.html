@@ -1,9 +1,9 @@
-<div class="crud group relative flex w-96 flex-col  p-4  transition-all duration-300 hover:scale-[1.02]">
+<div class="crud group relative flex w-96 flex-col scale-[0.9] p-4  transition-all duration-1000 hover:scale-[0.95]">
 
-    <div class="absolute inset-px bg rounded-3xl"></div>
+    <div class="absolute inset-px bg rounded-3xl grid"></div>
 
 
-    <div class="relative">
+    <div class="">
         <div class="mb-4 flex items-center justify-between relative bottom-3">
 
             <div class="flex items-center gap-2">
@@ -85,7 +85,7 @@
             </div>
         </div>
 
-        <div class="mb-4 grid grid-cols-6 gap-4 relative bottom-12">
+        <div class="mb-4 grid grid-cols-6 gap-4 relative bottom-5">
             <div class="rounded-2xl bg-slate-900/50 p-3 col-span-4 h-16">
                 <div class="wave-group mt-4 relative bottom-4">
                     <input #txtAddress type="text" required="" type="text"
@@ -113,10 +113,10 @@
 
 
 
-        <div class=" bg-slate-900/50 rounded-2xl d-width dpl">
+        <div class=" bg-slate-900/50 rounded-2xl dpl">
 
             <div class=" grid grid-cols-12 place-items-center relative bottom-2">
-                <div class="wave-group mt-4 col-span-5">
+                <div class="wave-group mt-6 col-span-5">
                     <input #txtAddress type="text" required="" type="text"
                         class=" input border p-2 outline-none focus:ring-0 focus:border-gray-400" style="width: 140px;">
                     <span class="bar"></span>
@@ -186,13 +186,18 @@
             </div>
 
 
-            <div #itemDetailsTab>
+
+            
+
+            <ng-container #itemDetailsTab>
+
+            </ng-container>
+
             
 
 
 
 
-            </div>
 
 
 
@@ -208,11 +213,7 @@
 
 
 
-
-
-
-
-            <div class="grid grid-cols-1 place-items-center mt-5">
+            <div class="grid grid-cols-1 place-items-center mb-4">
                 <div>
                     <label for="message" class="avb">Discription</label>
                     <textarea id="message" rows="4"
@@ -249,28 +250,6 @@
 
 
 
-<button id="dropdownDefaultButtonFMx" data-dropdown-toggle="dropdownFMx" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown button <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-    </svg>
-    </button>
-    
-    <!-- Dropdown menu -->
-    <div id="dropdownFMx" class="z-100 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
-        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
-          <li>
-            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
-          </li>
-          <li>
-            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-          </li>
-          <li>
-            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
-          </li>
-          <li>
-            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
-          </li>
-        </ul>
-    </div>
 
     
     

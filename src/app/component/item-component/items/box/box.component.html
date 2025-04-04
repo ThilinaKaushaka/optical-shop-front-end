@@ -1,0 +1,60 @@
+<div class="grid grid-cols-1 grid-rows-2">
+
+    <div class="grid grid-cols-4 place-items-center">
+
+        <div class="wave-group w-28 mr-16 col-span-2">
+            <input #txtBoxId required="" type="text"
+                class="w-44 input border p-2 outline-none focus:ring-0 focus:border-gray-400">
+            <span class="bar"></span>
+            <label #lblAddress class="label">
+                <span class="label-char" style="--index: 0">B</span>
+                <span class="label-char " style="--index: 1">o</span>
+                <span class="label-char " style="--index: 2">x</span>
+                <span class="label-char " style="--index: 3">&nbsp;</span>
+                <span class="label-char " style="--index: 4">i</span>
+                <span class="label-char " style="--index: 5">d</span>
+            </label>
+        </div>
+
+
+
+        <div class="grid grid-rows-2 place-items-center">
+            <p class="avb w-18 ml-4">Lockable</p>
+            <label class="avb-panel">
+                <input type="checkbox" [checked]="isLockable" (change)="lockableCheckboxChange($event)">
+                <span class="checkbox"></span>
+            </label>
+        </div>
+
+        <div class="grid grid-rows-2 place-items-center">
+            <p class="avb w-18">Water proof</p>
+            <label class="avb-panel">
+                <input type="checkbox" [checked]="isWaterProof" (change)="waterProfCheckboxChange($event)">
+                <span class="checkbox"></span>
+            </label>
+        </div>
+
+    </div>
+
+    <div class="grid grid-cols-2 place-items-center">
+
+        <mat-form-field class="w-44 mt-2">
+            <mat-label>Material</mat-label>
+            <mat-select>
+                <mat-option [value]="selectedMaterial" (click)="changeMaterial(material)"
+                    *ngFor="let material of materialArray">{{material}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="w-44 mt-2">
+            <mat-label>Size</mat-label>
+            <mat-select>
+                <mat-option [value]="selectedSize" (click)="changeSize(size)"
+                    *ngFor="let size of sizeArray">{{size}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+    </div>
+
+
+</div>

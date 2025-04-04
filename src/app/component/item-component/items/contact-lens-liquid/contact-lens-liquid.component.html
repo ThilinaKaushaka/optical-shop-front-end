@@ -1,0 +1,59 @@
+<div class="grid grid-rows-2 grid-cols-1 ">
+
+    <div class="grid grid-cols-2 place-items-center">
+
+        <div class="wave-group w-28  mr-15">
+            <input #txtBoxId required="" type="text"
+                class="w-44 input border p-2 outline-none focus:ring-0 focus:border-gray-400">
+            <span class="bar"></span>
+            <label #lblAddress class="label">
+                <span class="label-char" style="--index: 0">L</span>
+                <span class="label-char " style="--index: 1">i</span>
+                <span class="label-char " style="--index: 2">q</span>
+                <span class="label-char " style="--index: 3">u</span>
+                <span class="label-char " style="--index: 4">i</span>
+                <span class="label-char " style="--index: 5">d &nbsp;</span>
+                <span class="label-char " style="--index: 7">i</span>
+                <span class="label-char " style="--index: 8">d</span>
+            </label>
+        </div>
+    
+    
+        <div class="wave-group w-28 mr-15">
+            <input #txtVoluem required="" type="number"
+                class="w-44 input border p-2 outline-none focus:ring-0 focus:border-gray-400">
+            <span class="bar"></span>
+            <label #lblAddress class="label">
+                <span class="label-char" style="--index: 0">V</span>
+                <span class="label-char " style="--index: 1">o</span>
+                <span class="label-char " style="--index: 2">l</span>
+                <span class="label-char " style="--index: 3">u</span>
+                <span class="label-char " style="--index: 4">m</span>
+                <span class="label-char " style="--index: 5">e</span>
+            </label>
+        </div>
+
+    </div>
+
+
+    <div class="grid grid-cols-3">
+
+        <mat-form-field class="w-50 mt-2 col-span-2 ml-4">
+            <mat-label>Solution type</mat-label>
+            <mat-select>
+                <mat-option [value]="selectedSolution" (click)="changeSolutionType(solution)" *ngFor="let solution of solutionTypeArray">{{solution}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    
+        <div class="grid grid-rows-2 place-items-center mb-5">
+            <p class="avb w-18 ml-2">Water proof</p>
+            <label class="avb-panel ">
+                <input type="checkbox" [checked]="isPreservatives" (change)="preservativesCheckboxChange($event)">
+                <span class="checkbox"></span>
+            </label>
+        </div>
+
+    </div>
+
+
+</div>

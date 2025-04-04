@@ -1,36 +1,59 @@
-import { Component, NgModule } from '@angular/core';
-import { FrameMaterial } from '../../../../util/frame/FrameMaterial';
-import { NgFor} from '@angular/common';
+import {Component, ViewEncapsulation} from '@angular/core';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {FormsModule} from '@angular/forms';
+import { FrameMaterial } from '../../../../util/item/frame/FrameMaterial';
+import { NgFor } from '@angular/common';
+import { FrameGender } from '../../../../util/item/frame/FrameGender';
+import { FrameShape } from '../../../../util/item/frame/FrameShape';
+
+
+
+
+
+
+interface Food {
+  value: string;
+  viewValue: string;
+}
 
 
 @Component({
   selector: 'app-frame',
-  imports: [NgFor],
+  imports: [FormsModule, MatFormFieldModule, MatSelectModule, MatInputModule,NgFor],
   templateUrl: './frame.component.html',
   styleUrl: './frame.component.css',
-  standalone:true
+  encapsulation:ViewEncapsulation.None,
+  standalone:true,
 })
-
-
-
-
 export class FrameComponent {
 
+  
+
+
+  
+  selectedMaterial:FrameMaterial=FrameMaterial.NONE;
   materialArray:FrameMaterial[]=Object.values(FrameMaterial);
 
-  material:FrameMaterial=FrameMaterial.None;
+  selectedGender:FrameGender=FrameGender.NONE;
+  genderArray:FrameGender[]=Object.values(FrameGender);
 
+  selectedShape:FrameShape=FrameShape.NONE;
+  shapeArray:FrameShape[]=Object.values(FrameShape);
 
-  setMaterial(mat:FrameMaterial):void{
-    this.material=mat;
+  changeMaterial(material:FrameMaterial):void{
+    this.selectedMaterial=material;
   }
 
-  selectedOption: string = '';
-  options = [
-    { label: 'Option 1', value: '1' },
-    { label: 'Option 2', value: '2' },
-    { label: 'Option 3', value: '3' }
-  ];
+  changeGender(gender:FrameGender):void{
+    this.selectedGender=gender;
+  }
+
+  changeShape(shape:FrameShape):void{
+    this.selectedShape=shape;
+  }
+
 }
 
 

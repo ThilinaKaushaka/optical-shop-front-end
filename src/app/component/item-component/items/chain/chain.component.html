@@ -1,0 +1,72 @@
+<!--
+    
+    private Integer itemId;************************
+
+    private ChainMaterial material;
+    private ChainStyle style;
+    private ChainClaspType claspType;
+
+    private Double length;
+-->
+
+<div class="grid grid-cols-1 grid-rows-2">
+
+    <div class="grid grid-cols-3 place-items-center">
+
+        <div class="wave-group w-28 ml-4">
+            <input #txtChainId required="" type="text" class="w-24 input border p-2 outline-none focus:ring-0 focus:border-gray-400">
+            <span class="bar"></span>
+            <label #lblAddress class="label">
+                <span class="label-char" style="--index: 0">C</span>
+                <span class="label-char " style="--index: 1">h</span>
+                <span class="label-char " style="--index: 2">a</span>
+                <span class="label-char " style="--index: 3">i</span>
+                <span class="label-char " style="--index: 4">n</span>
+                <span class="label-char " style="--index: 5">&nbsp;</span>
+                <span class="label-char " style="--index: 6">i</span>
+                <span class="label-char " style="--index: 7">d</span>
+            </label>
+        </div>
+
+        <div class="wave-group w-28 ml-4">
+            <input #txtChainId required="" type="number" class="w-24 input border p-2 outline-none focus:ring-0 focus:border-gray-400">
+            <span class="bar"></span>
+            <label #lblAddress class="label">
+                <span class="label-char" style="--index: 0">L</span>
+                <span class="label-char " style="--index: 1">e</span>
+                <span class="label-char " style="--index: 2">n</span>
+                <span class="label-char " style="--index: 3">g</span>
+                <span class="label-char " style="--index: 4">t</span>
+                <span class="label-char " style="--index: 5">h</span>
+            </label>
+        </div>
+
+        <mat-form-field class="w-30 mt-2">
+            <mat-label>Material</mat-label>
+            <mat-select>
+                <mat-option  [value]="selectedMaterial" (click)="changeMaterial(material)" *ngFor="let material of materialArray">{{material}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+    </div>
+
+    <div class="grid grid-cols-2 place-items-center">
+
+        <mat-form-field class="w-40 mt-2">
+            <mat-label>Material</mat-label>
+            <mat-select>
+                <mat-option  [value]="selectedClaspType" (click)="changeClaspType(clasp)" *ngFor="let clasp of claspTypeArray">{{clasp}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="w-40 mt-2">
+            <mat-label>Material</mat-label>
+            <mat-select>
+                <mat-option  [value]="selectedStyle" (click)="changeStyle(style)" *ngFor="let style of styleArray">{{style}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+    </div>
+
+
+</div>

@@ -1,0 +1,56 @@
+<div class="grid grid-cols-2 place-items-center">
+    <div class="wave-group w-30 mr-11">
+        <input #txtLensId required="" type="text" class=" input border p-2 outline-none focus:ring-0 focus:border-gray-400">
+        <span class="bar"></span>
+        <label #lblAddress class="label">
+            <span class="label-char" style="--index: 0">L</span>
+            <span class="label-char " style="--index: 1">e</span>
+            <span class="label-char " style="--index: 2">n</span>
+            <span class="label-char " style="--index: 3">s</span>
+            <span class="label-char " style="--index: 4">&nbsp;</span>
+            <span class="label-char " style="--index: 5">i</span>
+            <span class="label-char " style="--index: 6">d</span>
+        </label>
+    </div>
+
+    <div>
+        <mat-form-field class="w-40">
+            <mat-label>Material</mat-label>
+            <mat-select class="material">
+                <mat-option  [value]="selectedMaterial" (click)="changeMaterial(material)" *ngFor="let material of materialArray">{{material}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field class="w-40 mr-1">
+            <mat-label>Finished</mat-label>
+            <mat-select>
+                <mat-option  [value]="selectedFinished" (click)="changeFinished(finished)" *ngFor="let finished of finishedArray">{{finished}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field class="w-40">
+            <mat-label>Type</mat-label>
+            <mat-select>
+                <mat-option  [value]="selectedType" (click)="changeType(type)" *ngFor="let type of typeArray">{{type}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="ml-8">
+        <mat-form-field class="w-50">
+            <mat-label>Coating</mat-label>
+            <mat-select>
+                <mat-option  [value]="selectedCoating" (click)="changeCoating(coating)" *ngFor="let coating of coatingArray">{{coating}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    
+
+</div>
+
+

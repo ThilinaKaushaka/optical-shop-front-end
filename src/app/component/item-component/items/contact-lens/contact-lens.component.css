@@ -8,7 +8,6 @@
     font-size: 15px;
     padding: 10px 10px 10px 5px;
     display: block;
-    width: 200px;
     border: none;
     border-bottom: 1px solid #ffffff;
     color:aliceblue;
@@ -98,6 +97,49 @@
     width: 40px;
     z-index: 0;
 }
+
+
+
+/*===================================*/
+
+.avb-panel {
+  display: block;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.avb-panel input[type='checkbox'] {
+  position: absolute;
+  transform: scale(0);
+}
+
+.avb-panel input[type='checkbox']:checked ~ .checkbox {
+  transform: rotate(45deg);
+  width: 14px;
+  margin-left: 5px;
+  border-color: #24c78e;
+  border-width: 5px;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-radius: 0;
+}
+
+.checkbox {
+  display: block;
+  width: inherit;
+  height: inherit;
+  border: solid 3px #2a2a2ab7;
+  border-radius: 6px;
+  transition: all 0.375s;
+}
+
+.avb{
+  color: rgba(250, 235, 215, 0.555);
+  font-size: 14px;
+  font-weight:100;
+}
+
 
 
 

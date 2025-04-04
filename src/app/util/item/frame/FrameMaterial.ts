@@ -1,5 +1,5 @@
 export enum FrameMaterial {
-    None="None",
+    NONE="None",
     METAL = "Metal",
     PLASTIC = "Plastic",
     TITANIUM = "Titanium",

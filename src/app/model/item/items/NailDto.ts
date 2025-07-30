@@ -28,4 +28,15 @@ export class NailDto {
         this.usages = usages;
         this.threadType = threadType;
     }
+    toArray(): (number | string | boolean | NailMaterial | NailUsage | NailThreadType | null)[] {
+        return [
+            this.id,
+            this.itemId,
+            this.size,
+            this.isNutAndBolt,
+            this.material,
+            this.usages,
+            this.threadType
+        ];
+    }
 }

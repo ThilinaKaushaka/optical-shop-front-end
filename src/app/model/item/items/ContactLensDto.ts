@@ -46,4 +46,22 @@ export class ContactLensDto {
         this.colour = colour;
         this.uvProtection = uvProtection;
     }
+
+    toArray(): (number | string | boolean | ContactLensType | ContactLensDuration | ContactLensMaterial | null)[] {
+        return [
+            this.id,
+            this.itemId,
+            this.type,
+            this.duration,
+            this.material,
+            this.waterContent,
+            this.baseCurve,
+            this.diameter,
+            this.power,
+            this.cylinder,
+            this.axis,
+            this.colour,
+            this.uvProtection
+        ];
+    }
 }

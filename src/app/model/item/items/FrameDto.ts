@@ -22,4 +22,13 @@ export class FrameDto {
         this.shape = shape;
         this.gender = gender;
     }
+     toArray(): (number | FrameMaterial | FrameShape | FrameGender | null)[] {
+        return [
+            this.id,
+            this.itemId,
+            this.material,
+            this.shape,
+            this.gender
+        ];
+    }
 }

@@ -2,12 +2,13 @@ import { Component, AfterViewInit, ViewChild, ViewContainerRef, OnInit } from '@
 import { initFlowbite } from 'flowbite';
 import { LogInFormComponent } from "./log-in-form/log-in-form.component";
 import { AdminNavPanelComponent } from './nav-panels/admin-nav-panel/admin-nav-panel.component';
+import { EmployeeNavPanelComponent } from "./nav-panels/employee-nav-panel/employee-nav-panel.component";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports: [AdminNavPanelComponent]
+  imports: [AdminNavPanelComponent, EmployeeNavPanelComponent]
 })
 export class AppComponent implements AfterViewInit,OnInit {
 

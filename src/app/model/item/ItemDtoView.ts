@@ -1,6 +1,6 @@
 import { ItemCategory } from "../../util/item/ItemCategoty";
 
-export class ItemDto{
+export class ItemDtoView{
     id: number | null=null ;
     name: string | null=null ;
     category: ItemCategory;
@@ -11,7 +11,7 @@ export class ItemDto{
     isDisable: boolean | null=null ;
     itemObject: any ;
 
-    constructor(id: number | null,name: string,category: ItemCategory,brand: string,qty: number,price: number,description: string,isDisable: boolean,itemObject: any){
+    constructor(id: number | null,name: string | null,category: ItemCategory,brand: string | null,qty: number | null,price: number | null,description: string | null,isDisable: boolean | null,itemObject: any | null){
         this.id = id;
         this.name = name;
         this.category = category;

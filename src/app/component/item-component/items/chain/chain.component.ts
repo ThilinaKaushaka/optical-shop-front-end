@@ -47,14 +47,14 @@ export class ChainComponent {
     this.itemId=chainDto.itemId;
     this.txtChainId.nativeElement.value=`CHAIN-${chainDto.id}`;
     this.txtChainLength.nativeElement.value=chainDto.length;
-    this.changeClaspType(chainDto.claspType!=null?chainDto.claspType:ChainClaspType.NONE);
-    this.changeMaterial(chainDto.material!=null?chainDto.material:ChainMaterial.NONE);
-    this.changeStyle(chainDto.style!=null?chainDto.style:ChainStyle.NONE);
+    this.changeClaspType(chainDto.claspType??ChainClaspType.NONE);
+    this.changeMaterial(chainDto.material??ChainMaterial.NONE);
+    this.changeStyle(chainDto.style??ChainStyle.NONE);
   }
 
   getChainValue():ChainDto{
     return new ChainDto(
-      parseInt(this.txtChainId.nativeElement.value.split('-')[1]),
+      this.txtChainId.nativeElement.value==''?null:parseInt(this.txtChainId.nativeElement.value.split('-')[1]),
       this.itemId,
       this.selectedMaterial,
       this.selectedStyle,

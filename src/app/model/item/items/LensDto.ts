@@ -35,4 +35,17 @@ export class LensDto {
         this.cylinder = cylinder;
         this.axis = axis;
     }
+        toArray(): (number | LensType | LensMaterial | LensCoating | LensFinished | null)[] {
+        return [
+            this.id,
+            this.itemId,
+            this.type,
+            this.material,
+            this.coating,
+            this.finished,
+            this.power,
+            this.cylinder,
+            this.axis
+        ];
+    }
 }

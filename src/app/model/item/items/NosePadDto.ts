@@ -22,4 +22,13 @@ export class NosePadDto {
         this.mountType = mountType;
         this.shape = shape;
     }
+    toArray(): (number | NosePadMaterial | NosePadMountType | NosePadShape | null)[] {
+        return [
+            this.id,
+            this.itemId,
+            this.material,
+            this.mountType,
+            this.shape
+        ];
+    }
 }

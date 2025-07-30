@@ -14,6 +14,16 @@ import { NosePadComponent } from '../items/nose-pad/nose-pad.component';
 import { ItemService } from '../../../service/itemService';
 import { ItemDto } from '../../../model/item/ItemDto';
 import { LensDto } from '../../../model/item/items/LensDto';
+import { BoxDto } from '../../../model/item/items/BoxDto';
+import { FrameDto } from '../../../model/item/items/FrameDto';
+import { ContactLensDto } from '../../../model/item/items/ContactLensDto';
+import { ChainDto } from '../../../model/item/items/ChainDto';
+import { ContactLiquidDto } from '../../../model/item/items/ContactLiquidDto ';
+import { LensCleanerDto } from '../../../model/item/items/LensCleanerDto';
+import { LensClothDto } from '../../../model/item/items/LensClothDto';
+import { NailDto } from '../../../model/item/items/NailDto';
+import { NosePadDto } from '../../../model/item/items/NosePadDto';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -26,7 +36,7 @@ import { LensDto } from '../../../model/item/items/LensDto';
 })
 export class ItemCrudPanelComponent implements AfterViewInit {
 
-    constructor(private itemService:ItemService){}
+    constructor(private http:HttpClient,private itemService:ItemService){}
 
 
     @ViewChild('btnAdd') btnAdd!: ElementRef;
@@ -47,18 +57,87 @@ export class ItemCrudPanelComponent implements AfterViewInit {
 
     public itemCategories: ItemCategory[] = Object.values(ItemCategory);
 
+    disableCommonItemDetails(): void {
+        this.txtName.nativeElement.disabled = true;
+        this.txtPrice.nativeElement.disabled = true;
+        this.txtBrand.nativeElement.disabled = true;
+        this.txtQty.nativeElement.disabled = true;
+        this.txtDescription.nativeElement.disabled = true;
+    }
+
+    enableCommonItemDetails(): void {
+        this.txtName.nativeElement.disabled = false;
+        this.txtPrice.nativeElement.disabled = false;
+        this.txtBrand.nativeElement.disabled = false;
+        this.txtQty.nativeElement.disabled = false;
+        this.txtDescription.nativeElement.disabled = false;
+    }
 
 
+    disableItemId(): void {
+        this.itemId.nativeElement.disabled = true;
+    }
 
+    cleanItemId(): void {
+        this.itemId.nativeElement.value = '';
+    }
 
+    enableItemId(): void {
+        this.itemId.nativeElement.disabled = false;
+    }
+
+    cleanCommonItemDetails(): void {
+        this.txtName.nativeElement.value = '';
+        this.txtPrice.nativeElement.value = '';
+        this.txtBrand.nativeElement.value = '';
+        this.txtQty.nativeElement.value = '';
+        this.txtDescription.nativeElement.value = '';
+    }
+
+    getItemDetails():any{
+        switch (this.selectItemCategiry) {
+            case ItemCategory.LENS:return this.lensRef?.instance.getLensValues();
+            case ItemCategory.FRAME:return this.frameRef?.instance.getFrameValues();
+            case ItemCategory.CONTACT_LENS:return this.contactLensRef?.instance.getContactLensValues();
+            case ItemCategory.CHAIN:return this.chainRef?.instance.getChainValue();
+            case ItemCategory.BOX:return this.boxRef?.instance.getBoxValue();
+            case ItemCategory.CONTACT_LIQUID:return this.contactLensLiquidRef?.instance.getContactLensLiquidValues();
+            case ItemCategory.LENS_CLEANER:return this.lensCleanerRef?.instance.getLensCleanerValues();
+            case ItemCategory.LENS_CLOTH:return this.lensClothRef?.instance.getLensClothValues();
+            case ItemCategory.NAIL:return this.nailRef?.instance.getNailValues();
+            case ItemCategory.NOSE_PAD:return this.nosePadRef?.instance.getNosePadValues();
+            default:
+                    console.log("illegal item category");
+                    break;
+        }             
+    }
+    
     ngAfterViewInit(): void {
         this.btnAdd.nativeElement.addEventListener('click', () => {
-
+            console.log("add clicked");
+            this.cleanItemId();
+            this.cleanCommonItemDetails();
 
         });
 
         this.btnSaveAdd.nativeElement.addEventListener('click', () => {
+            console.log(this.getItemDetails());
+            this.itemService.saveItem(new ItemDto(
+                null,
+                this.txtName.nativeElement.value,
+                this.selectItemCategiry,
+                this.txtBrand.nativeElement.value,
+                parseInt(this.txtQty.nativeElement.value),
+                parseFloat(this.txtPrice.nativeElement.value),
+                this.txtDescription.nativeElement.value,
+                false,
+                this.getItemDetails()
+            )).subscribe(res=>{
+                console.log("item added");
+                
+            });
 
+            
 
         });
 
@@ -125,6 +204,9 @@ export class ItemCrudPanelComponent implements AfterViewInit {
     loadFrame(itemObject:Object): void {
         this.clearItemDetailTab();
         this.frameRef = this.itemDetailsTab.createComponent(FrameComponent);
+        setTimeout(() => {
+            this.frameRef?.instance.setFrameValues(itemObject as FrameDto);
+        });
     }
 
     loadLens(itemObject:Object): void {
@@ -138,41 +220,65 @@ export class ItemCrudPanelComponent implements AfterViewInit {
     loadContactLens(itemObject:Object): void {
         this.clearItemDetailTab();
         this.contactLensRef = this.itemDetailsTab.createComponent(ContactLensComponent);
+        setTimeout(() => {
+            this.contactLensRef?.instance.setContactLensValue(itemObject as ContactLensDto);
+        });
     }
 
     loadChain(itemObject:Object): void {
         this.clearItemDetailTab();
         this.chainRef = this.itemDetailsTab.createComponent(ChainComponent);
+        setTimeout(() => {
+            this.chainRef?.instance.setChainValue(itemObject as ChainDto);
+        });
     }
 
     loadBox(itemObject:Object): void {
         this.clearItemDetailTab();
         this.boxRef = this.itemDetailsTab.createComponent(BoxComponent);
+        setTimeout(() => {
+            this.boxRef?.instance.setBoxValue(itemObject as BoxDto);
+        });
     }
 
     loadContactLensLiquid(itemObject:Object): void {
         this.clearItemDetailTab();
         this.contactLensLiquidRef = this.itemDetailsTab.createComponent(ContactLensLiquidComponent);
+        setTimeout(() => {
+            this.contactLensLiquidRef?.instance.setContactLensLiquidValues(itemObject as ContactLiquidDto);
+        });
     }
 
     loadLensCleaner(itemObject:Object): void {
         this.clearItemDetailTab();
         this.lensCleanerRef = this.itemDetailsTab.createComponent(LensCleanerComponent);
+        setTimeout(() => {
+            this.lensCleanerRef?.instance.setLensCleanerValues(itemObject as LensCleanerDto);
+        });
     }
 
     loadLensCloth(itemObject:Object): void {
         this.clearItemDetailTab();
         this.lensClothRef = this.itemDetailsTab.createComponent(LensClothComponent);
+        setTimeout(() => {
+            this.lensClothRef?.instance.setLensClothValues(itemObject as LensClothDto);
+        });
     }
 
     loadNail(itemObject:Object): void {
         this.clearItemDetailTab();
         this.nailRef = this.itemDetailsTab.createComponent(NailComponent);
+        setTimeout(() => {
+            this.nailRef?.instance.setNailValues(itemObject as NailDto);
+        });
     }
 
     loadNosePad(itemObject:Object): void {
         this.clearItemDetailTab();
         this.nosePadRef = this.itemDetailsTab.createComponent(NosePadComponent);
+        setTimeout(() => {
+            this.nosePadRef?.instance.setNosePadValues(itemObject as NosePadDto);
+        });
     }
 
     clearItemDetailTab(): void {
@@ -195,6 +301,8 @@ export class ItemCrudPanelComponent implements AfterViewInit {
         this.txtBrand.nativeElement.value=item.brand;
         this.txtQty.nativeElement.value=item.qty;
         this.txtPrice.nativeElement.value=item.price;
+        this.txtDescription.nativeElement.value=item.description;
+        this.disableCommonItemDetails();
 
 
         this.categoryChange(item.category,item.itemObject);

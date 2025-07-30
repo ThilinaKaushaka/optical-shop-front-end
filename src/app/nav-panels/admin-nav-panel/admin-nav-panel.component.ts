@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
-import 'boxicons';
+
 @Component({
   selector: 'app-admin-nav-panel',
   imports: [RouterOutlet,RouterModule],

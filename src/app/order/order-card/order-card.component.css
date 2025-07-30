@@ -1,0 +1,388 @@
+/* From Uiverse.io by Smit-Prajapati */ 
+.card {
+    --accent-color: #ffd426;
+    position: relative;
+    width: 240px;
+    background: white;
+    border-radius: 1rem;
+    padding: 0.3rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 50px 30px -20px;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .card .image-container {
+    position: relative;
+    width: 100%;
+    height: 130px;
+    border-radius: 0.7rem;
+    border-top-right-radius: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  .imgi{
+    position: relative;
+    bottom: 142px;
+  }
+  
+  
+  .card .image-container img {
+    width: 160px;
+    height: 145px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: inherit;
+    margin-left: 30px;
+  }
+  
+  .card .image-container .svg {
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+  }
+  
+  .card .image-container .price {
+    position: absolute;
+    right: 0.7rem;
+    bottom: -1rem;
+    background: white;
+    color: var(--accent-color);
+    font-weight: 900;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    border-radius: 1rem 1rem 2rem 2rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 0px 15px 0px;
+  }
+
+  .price{
+    position: relative;
+    top: 110px;
+    height: 50px;
+    cursor: default;
+  }
+  
+  .card .favorite {
+    position: absolute;
+    width: 19px;
+    height: 19px;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+  }
+  
+  .card .favorite input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .card .favorite input:checked ~ svg {
+    animation: bouncing 0.5s;
+    fill: rgb(255, 95, 95);
+    filter: drop-shadow(0px 3px 1px rgba(53, 53, 53, 0.14));
+  }
+  
+  .card .favorite svg {
+    fill: #a8a8a8;
+  }
+
+
+  
+  
+  .card .content {
+    padding: 0px 0.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card .content .itemId {
+    font-weight: 900;
+    color: #a6a6a6;
+  }
+  
+  .card .content .item-name {
+    font-weight: 700;
+    color: #666666;
+    font-size: 0.7rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card .content .color-size-container {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #a8a8a8;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .card .content .color-size-container > * {
+    flex: 1;
+  }
+  
+  .card .content .color-size-container .colors .colors-container {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.3rem;
+    font-size: 0.5rem;
+    margin-top: 0.2rem;
+  }
+  
+  .card .content .color-size-container .colors .colors-container .color {
+    height: 14px;
+    position: relative;
+  }
+  
+  .card .content .color-size-container .colors .colors-container .color:hover .color-name {
+    display: block;
+  }
+  
+  .card .content .color-size-container .colors .colors-container .color a {
+    display: inline-block;
+    height: 100%;
+    aspect-ratio: 1;
+    border: 3px solid black;
+    border-radius: 50%;
+  }
+  
+  .card .content .color-size-container .colors .colors-container .color .color-name {
+    display: none;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
+    background: black;
+    padding: 0.2rem 1rem;
+    border-radius: 1rem;
+    text-align: center;
+  }
+  
+  .card .content .color-size-container .colors .colors-container .color:first-child a {
+    border-color: #ffd426;
+  }
+  
+  .card .content .color-size-container .colors .colors-container .color:nth-child(2) a {
+    background: #144076;
+  }
+  
+  .card .content .color-size-container .colors .colors-container .color:nth-child(3) a {
+    border-color: #00b9ff;
+  }
+  
+  .card .content .color-size-container .colors .colors-container .color:nth-child(4) a {
+    border-color: #ff6ba1;
+  }
+  
+  .card .content .color-size-container .colors .colors-container .active {
+    border-color: black;
+  }
+  
+  .card .content .color-size-container .sizes .size-container {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.2rem;
+  }
+  
+  .card .content .color-size-container .sizes .size-container .size {
+    height: 14px;
+  }
+  
+  .card .content .color-size-container .sizes .size-container .size .size-radio {
+    cursor: pointer;
+  }
+  
+  .card .content .color-size-container .sizes .size-container .size .size-radio input {
+    display: none;
+  }
+  
+  .card .content .color-size-container .sizes .size-container .size .size-radio input:checked ~ .name {
+    background: var(--accent-color);
+    border-radius: 2rem 2rem 1.5rem 1.5rem;
+    color: white;
+  }
+  
+  .card .content .color-size-container .sizes .size-container .size .size-radio .name {
+    display: grid;
+    place-content: center;
+    height: 100%;
+    aspect-ratio: 1.2/1;
+    text-decoration: none;
+    color: #484848;
+    font-size: 0.5rem;
+    text-align: center;
+  }
+  
+  .card .content .rating {
+    color: #a8a8a8;
+    font-size: 0.6rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .card .content .rating svg {
+    height: 12px;
+  }
+  
+  .card .button-container {
+    display: flex;
+    gap: 0.3rem;
+  }
+  
+  .card .button-container .button {
+    border-radius: 1.4rem 1.4rem 0.7rem 0.7rem;
+    border: none;
+    padding: 0.5rem 0;
+    background: var(--accent-color);
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+  }
+  
+  .card .button-container .button:hover {
+    background: orangered;
+  }
+  
+  .card .button-container .buy-button {
+    flex: auto;
+  }
+  
+  .card .button-container .cart-button {
+    display: grid;
+    place-content: center;
+    width: 50px;
+    margin-left: 150px;
+    
+    
+  }
+  
+  .card .button-container .cart-button svg {
+    width: 15px;
+    fill: white;
+  }
+  
+  .card:hover {
+    transform: scale(1.03);
+  }
+  
+  @keyframes bouncing {
+    from, to {
+      transform: scale(1, 1);
+    }
+  
+    25% {
+      transform: scale(1.5, 2.1);
+    }
+  
+    50% {
+      transform: scale(2.1, 1.5);
+    }
+  
+    75% {
+      transform: scale(1.5, 2.05);
+    }
+  }
+
+
+  .qty-input{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 4px;
+    
+  }
+
+  .qty-input button{
+    background-color: #ffd426;
+    color: white;
+    border: none;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    text-align:center;
+    padding-left: 5px;
+    padding-top: 0px;
+    padding-bottom: 25px;
+    font-weight: bold;
+  }
+
+  .qty-input text{
+    color: #000;
+  }
+
+  .qty-input input{
+    width: 40px;
+    height: 20px;
+    text-align: center;
+    border: none;
+    border-bottom: 1px solid #696969;
+    background-color: #ffffff8c;
+    color: rgb(0, 0, 0);
+    appearance: textfield;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .qty-input input::-webkit-inner-spin-button,
+  .qty-input input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .qty-input button:hover{
+    background-color: #ff6b6b;
+  }
+
+
+  .btn-qty-decrease{
+    border-radius: 10px 5px 8px 10px;
+  }
+
+  .btn-qty-increase{
+    border-radius: 5px 10px 10px 8px;
+  }
+
+  .pnl-discount{
+    font-size: 10px;
+    font-weight: bold;
+    display: inline-block;
+    transform: rotate(-2deg);
+    margin-left: 20px;
+    position: relative;
+    bottom: 7px;
+    color: #302f2f;
+  }
+
+  .ingredients-container{
+    font-size: 10px;
+    font-weight: bold;
+    padding: auto;
+    position: relative;
+    bottom: 15px;
+    color: rgb(92, 92, 91);
+  }
+
+  .ex-date{
+    text-align: center;
+  }
+
+  .qty-div{
+    margin-left: 40px;
+  }
+
+  .pnl-qty,.pnl-ex-date{
+    color: #6d6363;
+  }
+
+  .ex-date,.qty-div{
+    color:goldenrod;
+  }

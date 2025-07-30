@@ -15,8 +15,11 @@ import { BoxDto } from '../../../../model/item/items/BoxDto';
   styleUrl: './box.component.css'
 })
 export class BoxComponent {
-  @ViewChild('lblBoxId') lblBoxId !: ElementRef;
 
+  @ViewChild('lblBoxId') lblBoxId !: ElementRef;
+  @ViewChild('txtBoxId') boxId !:ElementRef;
+  isWaterProof:boolean = false;
+  isLockable:boolean=false;
   selectedMaterial: BoxMaterial = BoxMaterial.NONE;
   selectedSize: BoxSize = BoxSize.NONE;
 
@@ -35,10 +38,6 @@ export class BoxComponent {
     this.selectedSize = size;
   }
 
-
-  isWaterProof:boolean = false;
-  isLockable:boolean=false;
-
   waterProfCheckboxChange(event: Event) {
     this.isWaterProof = (event.target as HTMLInputElement).checked;
   }
@@ -49,16 +48,16 @@ export class BoxComponent {
 
   setBoxValue(boxDto:BoxDto):void{
     this.itemId=boxDto.itemId;
-    this.lblBoxId.nativeElement.value=`BOX-${boxDto.id}`;
-    this.changeMaterial(boxDto.material!=null?boxDto.material:BoxMaterial.NONE);
-    this.changeSize(boxDto.size!=null?boxDto.size:BoxSize.NONE);
-    this.isWaterProof=boxDto.isWaterProof!=null?boxDto.isWaterProof:false;
-    this.isLockable=boxDto.isLockable!=null?boxDto.isLockable:false;
+    this.boxId.nativeElement.value='BOX-'+boxDto.id;
+    this.changeMaterial(boxDto.material??BoxMaterial.NONE);
+    this.changeSize(boxDto.size??BoxSize.NONE);
+    this.isLockable=boxDto.isLockable??false;
+    this.isWaterProof=boxDto.isWaterProof??false;
   }
 
   getBoxValue():BoxDto{
     return new BoxDto(
-      parseInt(this.lblBoxId.nativeElement.value.split('-')[1]),
+      this.boxId.nativeElement.value==''?null:parseInt(this.boxId.nativeElement.value.split('-')[1]),
       this.itemId,
       this.selectedMaterial,
       this.selectedSize,
@@ -67,5 +66,4 @@ export class BoxComponent {
     );
   }
   
-
 }

@@ -24,4 +24,14 @@ export class LensClothDto {
         this.isAntiStatic = isAntiStatic;
         this.isPrinted = isPrinted;
     }
+    toArray(): (number | LensClothMaterial | LensClothSize | boolean | null)[] {
+        return [
+            this.id,
+            this.itemId,
+            this.material,
+            this.size,
+            this.isAntiStatic,
+            this.isPrinted
+        ];
+    }
 }

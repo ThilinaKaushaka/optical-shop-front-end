@@ -69,12 +69,12 @@ export class LensComponent {
     this.changeLensMaterial(lensOb.material);
     this.changeLensCoating(lensOb.coating);
     this.changeLensFinished(lensOb.finished);
-    this.changeLensType(lensOb.type);
+    this.changeLensType(lensOb.type);   
   }
 
   getLensValues(): LensDto {
     return new LensDto(
-      parseInt(this.lensId.nativeElement.value.split('-')[1]),
+      this.lensId.nativeElement.value==''?null:parseInt(this.lensId.nativeElement.value.split('-')[1]),
       this.itemId,
       this.selectedType,
       this.selectedMaterial,

@@ -20,4 +20,13 @@ export class ContactLiquidDto {
         this.preservatives = preservatives;
         this.type = type;
     }
+    toArray(): (number | boolean | SolutionType | null)[] {
+        return [
+            this.id,
+            this.itemId,
+            this.volume,
+            this.preservatives,
+            this.type
+        ];
+    }
 }

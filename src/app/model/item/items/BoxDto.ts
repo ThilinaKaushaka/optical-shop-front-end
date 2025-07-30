@@ -24,4 +24,17 @@ export class BoxDto {
         this.isLockable = isLockable;
         this.isWaterProof = isWaterProof;
     }
+
+    toArray(): (number | BoxMaterial | BoxSize | boolean | null)[] {
+      return [
+        this.id,
+        this.itemId,
+        this.material,
+        this.size,
+        this.isLockable,
+        this.isWaterProof
+      ];
+    }
+
+
 }

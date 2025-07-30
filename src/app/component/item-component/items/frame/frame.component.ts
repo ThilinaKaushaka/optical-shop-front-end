@@ -1,4 +1,4 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import {Component, ElementRef, ViewChild, ViewEncapsulation} from '@angular/core';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -7,6 +7,7 @@ import { FrameMaterial } from '../../../../util/item/frame/FrameMaterial';
 import { NgFor } from '@angular/common';
 import { FrameGender } from '../../../../util/item/frame/FrameGender';
 import { FrameShape } from '../../../../util/item/frame/FrameShape';
+import { FrameDto } from '../../../../model/item/items/FrameDto';
 
 
 
@@ -28,10 +29,7 @@ interface Food {
   standalone:true,
 })
 export class FrameComponent {
-
-  
-
-
+  @ViewChild('txtFrameId') frameId!: ElementRef;
   
   selectedMaterial:FrameMaterial=FrameMaterial.NONE;
   materialArray:FrameMaterial[]=Object.values(FrameMaterial);
@@ -55,6 +53,24 @@ export class FrameComponent {
 
   changeShape(shape:FrameShape):void{
     this.selectedShape=shape;
+  }
+
+  setFrameValues(frameOb: FrameDto): void {
+    this.itemId = frameOb.itemId;
+    this.frameId.nativeElement.value = `FRAME-${frameOb.id}`;
+    this.changeMaterial(frameOb.material??FrameMaterial.NONE);
+    this.changeGender(frameOb.gender??FrameGender.NONE);
+    this.changeShape(frameOb.shape??FrameShape.NONE)
+  }
+
+  getFrameValues(): FrameDto {
+    return new FrameDto(
+      this.frameId.nativeElement.value==''?null:parseInt(this.frameId.nativeElement.value.split('-')[1]),
+      this.itemId,
+      this.selectedMaterial,
+      this.selectedShape,
+      this.selectedGender
+    );
   }
 
 }

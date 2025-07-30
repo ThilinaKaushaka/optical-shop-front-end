@@ -25,4 +25,14 @@ export class ChainDto {
         this.claspType = claspType;
         this.length = length;
     }
+    toArray(): (number | ChainMaterial | ChainStyle | ChainClaspType | null)[] {
+        return [
+            this.id,
+            this.itemId,
+            this.material,
+            this.style,
+            this.claspType,
+            this.length
+        ];
+    }
 }

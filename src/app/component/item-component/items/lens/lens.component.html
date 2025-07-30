@@ -1,32 +1,36 @@
 <div class="grid grid-cols-2 place-items-center">
     <div class="wave-group w-30 mr-11">
-        <input #txtLensId required="" type="text" class=" input border p-2 outline-none focus:ring-0 focus:border-gray-400">
+        <input #txtLensId required type="text" class="input border p-2 outline-none focus:ring-0 focus:border-gray-400">
         <span class="bar"></span>
-        <label #lblAddress class="label">
+        <label #lblLenstId class="label">
             <span class="label-char" style="--index: 0">L</span>
-            <span class="label-char " style="--index: 1">e</span>
-            <span class="label-char " style="--index: 2">n</span>
-            <span class="label-char " style="--index: 3">s</span>
-            <span class="label-char " style="--index: 4">&nbsp;</span>
-            <span class="label-char " style="--index: 5">i</span>
-            <span class="label-char " style="--index: 6">d</span>
+            <span class="label-char" style="--index: 1">e</span>
+            <span class="label-char" style="--index: 2">n</span>
+            <span class="label-char" style="--index: 3">s</span>
+            <span class="label-char" style="--index: 4">&nbsp;</span>
+            <span class="label-char" style="--index: 5">i</span>
+            <span class="label-char" style="--index: 6">d</span>
         </label>
     </div>
 
     <div>
-        <mat-form-field class="w-40">
+        <mat-form-field class="w-45 mt-2 mr-4">
             <mat-label>Material</mat-label>
-            <mat-select class="material">
-                <mat-option  [value]="selectedMaterial" (click)="changeMaterial(material)" *ngFor="let material of materialArray">{{material}}</mat-option>
+            <mat-select [(value)]="selectedMaterial">
+                <mat-option *ngFor="let material of materialArray" [value]="material" (click)="changeLensMaterial(material)">
+                    {{material}}
+                </mat-option>
             </mat-select>
         </mat-form-field>
     </div>
 
     <div>
-        <mat-form-field class="w-40 mr-1">
+        <mat-form-field appearance="fill" class="w-40 mr-1">
             <mat-label>Finished</mat-label>
-            <mat-select>
-                <mat-option  [value]="selectedFinished" (click)="changeFinished(finished)" *ngFor="let finished of finishedArray">{{finished}}</mat-option>
+            <mat-select [(value)]="selectedFinished">
+                <mat-option *ngFor="let finished of finishedArray" [value]="finished" (click)="changeLensFinished(finished)">
+                    {{finished}}
+                </mat-option>
             </mat-select>
         </mat-form-field>
     </div>
@@ -34,8 +38,10 @@
     <div>
         <mat-form-field class="w-40">
             <mat-label>Type</mat-label>
-            <mat-select>
-                <mat-option  [value]="selectedType" (click)="changeType(type)" *ngFor="let type of typeArray">{{type}}</mat-option>
+            <mat-select [(value)]="selectedType">
+                <mat-option *ngFor="let type of typeArray" [value]="type" (click)="changeLensType(type)" >
+                    {{type}}
+                </mat-option>
             </mat-select>
         </mat-form-field>
     </div>
@@ -43,14 +49,48 @@
     <div class="ml-8">
         <mat-form-field class="w-50">
             <mat-label>Coating</mat-label>
-            <mat-select>
-                <mat-option  [value]="selectedCoating" (click)="changeCoating(coating)" *ngFor="let coating of coatingArray">{{coating}}</mat-option>
+            <mat-select [(value)]="selectedCoating">
+                <mat-option *ngFor="let coating of coatingArray" [value]="coating" (click)="changeLensCoating(coating)">
+                    {{coating}}
+                </mat-option>
             </mat-select>
         </mat-form-field>
     </div>
 
-    
+    <div class="wave-group w-30 mr-11 mb-2 ml-5">
+        <input #txtLenAxis required type="number" class="input border p-2 outline-none focus:ring-0 focus:border-gray-400">
+        <span class="bar"></span>
+        <label #lblAxis class="label">
+            <span class="label-char" style="--index: 0">A</span>
+            <span class="label-char" style="--index: 1">x</span>
+            <span class="label-char" style="--index: 2">i</span>
+            <span class="label-char" style="--index: 3">s</span>
+        </label>
+    </div>
 
+    <div class="wave-group w-30 mr-11">
+        <input #txtLensPower required type="number" step="any" class="input border p-2 outline-none focus:ring-0 focus:border-gray-400">
+        <span class="bar"></span>
+        <label #lblLensPower class="label">
+            <span class="label-char" style="--index: 0">P</span>
+            <span class="label-char" style="--index: 1">o</span>
+            <span class="label-char" style="--index: 2">w</span>
+            <span class="label-char" style="--index: 3">e</span>
+            <span class="label-char" style="--index: 4">r</span>
+        </label>
+    </div>
+
+    <div class="wave-group w-30 mr-5">
+        <input #txtLensCylinder required type="number" step="any" class="input border p-2 outline-none focus:ring-0 focus:border-gray-400">
+        <span class="bar"></span>
+        <label #lblCylinder class="label">
+            <span class="label-char" style="--index: 0">C</span>
+            <span class="label-char" style="--index: 1">y</span>
+            <span class="label-char" style="--index: 2">l</span>
+            <span class="label-char" style="--index: 3">i</span>
+            <span class="label-char" style="--index: 4">n</span>
+            <span class="label-char" style="--index: 5">d</span>
+            <span class="label-char" style="--index: 6">er</span>
+        </label>
+    </div>
 </div>
-
-

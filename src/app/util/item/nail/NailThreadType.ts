@@ -1,7 +1,7 @@
 export enum NailThreadType {
-    NONE = 'None',
-    FLAT_HEAD = 'FlatHead',
-    PHILLIPS = 'Phillips',
-    HEX = 'Hex',
-    TORX = 'Torx'
+    NONE = "NONE",
+    FLAT_HEAD = "FLAT_HEAD",
+    PHILLIPS = "PHILLIPS",
+    HEX = "HEX",
+    TORX = "TORX"
 }

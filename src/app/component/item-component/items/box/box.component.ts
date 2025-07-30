@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { BoxMaterial } from '../../../../util/item/box/BoxMaterial';
 import { BoxSize } from '../../../../util/item/box/BoxSize';
 import { NgFor } from '@angular/common';
@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { BoxDto } from '../../../../model/item/items/BoxDto';
 
 @Component({
   selector: 'app-box',
@@ -14,7 +15,7 @@ import { MatSelectModule } from '@angular/material/select';
   styleUrl: './box.component.css'
 })
 export class BoxComponent {
-
+  @ViewChild('lblBoxId') lblBoxId !: ElementRef;
 
   selectedMaterial: BoxMaterial = BoxMaterial.NONE;
   selectedSize: BoxSize = BoxSize.NONE;
@@ -23,6 +24,8 @@ export class BoxComponent {
   materialArray: BoxMaterial[] = Object.values(BoxMaterial);
   sizeArray: BoxSize[] = Object.values(BoxSize);
 
+  itemId: number | null = null;
+  
 
   changeMaterial(material: BoxMaterial): void {
     this.selectedMaterial = material;
@@ -35,15 +38,34 @@ export class BoxComponent {
 
   isWaterProof:boolean = false;
   isLockable:boolean=false;
+
   waterProfCheckboxChange(event: Event) {
-      this.isWaterProof = (event.target as HTMLInputElement).checked;
+    this.isWaterProof = (event.target as HTMLInputElement).checked;
   }
 
   lockableCheckboxChange(event: Event) {
     this.isLockable = (event.target as HTMLInputElement).checked;
   }
 
+  setBoxValue(boxDto:BoxDto):void{
+    this.itemId=boxDto.itemId;
+    this.lblBoxId.nativeElement.value=`BOX-${boxDto.id}`;
+    this.changeMaterial(boxDto.material!=null?boxDto.material:BoxMaterial.NONE);
+    this.changeSize(boxDto.size!=null?boxDto.size:BoxSize.NONE);
+    this.isWaterProof=boxDto.isWaterProof!=null?boxDto.isWaterProof:false;
+    this.isLockable=boxDto.isLockable!=null?boxDto.isLockable:false;
+  }
 
+  getBoxValue():BoxDto{
+    return new BoxDto(
+      parseInt(this.lblBoxId.nativeElement.value.split('-')[1]),
+      this.itemId,
+      this.selectedMaterial,
+      this.selectedSize,
+      this.isLockable,
+      this.isWaterProof
+    );
+  }
   
 
 }

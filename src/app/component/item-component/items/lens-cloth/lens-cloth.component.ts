@@ -24,6 +24,9 @@ export class LensClothComponent {
   materialArray: LensClothMaterial[] = Object.values(LensClothMaterial);
   sizeArray: LensClothSize[] = Object.values(LensClothSize);
 
+  itemId: number | null = null;
+
+
   changrMaterial(material:LensClothMaterial):void{
     this.selectedMaterial=material;
   }

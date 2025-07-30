@@ -27,6 +27,7 @@ export class NailComponent {
   usageArray: NailUsage[] = Object.values(NailUsage);
   selectedUsage: NailUsage = NailUsage.NONE;
 
+  itemId: number | null = null;
 
 
   nutAndBoltChange(event: Event) {

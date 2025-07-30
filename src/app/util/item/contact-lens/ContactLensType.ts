@@ -1,5 +1,5 @@
 export enum ContactLensType {
-    NONE = 'None',
-    COSMETIC = 'Cosmetic',
-    VISION = 'Vision'
-  }
+  NONE = "NONE",
+  COSMETIC = "COSMETIC",
+  VISION = "VISION"
+}

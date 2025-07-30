@@ -1,7 +1,7 @@
 export enum ContactLensMaterial {
-    NONE = 'None',
-    HYDROGEL = 'Hydrogel',
-    SILICONE_HYDROGEL = 'Silicone hydrogel',
-    HYBRID = 'Hybrid',
-    GAS_PERMEABLE = 'Gas permeable'
-  }
+  NONE = "NONE",
+  HYDROGEL = "HYDROGEL",
+  SILICONE_HYDROGEL = "SILICONE_HYDROGEL", 
+  HYBRID = "HYBRID",
+  GAS_PERMEABLE = "GAS_PERMEABLE"        
+}

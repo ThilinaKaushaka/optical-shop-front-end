@@ -1,7 +1,7 @@
 export enum SolutionType {
-    NONE = 'None',
-    MULTIPURPOSE = 'Multipurpose',
-    SALINE = 'Saline',
-    HYDROGEN_PEROXIDE = 'Hydrogen Peroxide', 
-    ENZYMATIC_CLEANER = 'Enzymatic Cleaner'   
+    NONE = "NONE",
+    MULTIPURPOSE = "MULTIPURPOSE",
+    SALINE = "SALINE",
+    HYDROGEN_PEROXIDE = "HYDROGEN_PEROXIDE",
+    ENZYMATIC_CLEANER = "ENZYMATIC_CLEANER"
 }

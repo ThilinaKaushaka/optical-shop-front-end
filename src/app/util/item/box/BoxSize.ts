@@ -1,5 +1,5 @@
 export enum BoxSize {
-    NONE = 'None',
+    NONE = 'NONE',
     S = 'S',
     M = 'M',
     L = 'L',

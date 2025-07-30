@@ -1,5 +1,5 @@
 export enum ItemCategory {
-    NONE="None", 
+    NONE="NONE", 
     LENS = "LENS",
     FRAME = "FRAME",
     CONTACT_LENS = "CONTACT_LENS",

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component ,ViewChild,ElementRef, AfterViewInit, OnInit} from '@angular/core';
-import { Customer } from '../../model/Customer';
+import { Customer } from '../../model/customer/Customer';
 import { CustomerService } from '../../service/CustomerService';
 
 @Component({
@@ -67,7 +67,7 @@ export class CustomerCrudComponent implements AfterViewInit {
  
 
   ngAfterViewInit(): void {
-    this.btnSearch.nativeElement.addEventListener('click',()=>{
+    this.btnSearch.nativeElement.addEventListener('click',()=>{  
       this.search();   
     });
 
@@ -107,7 +107,7 @@ export class CustomerCrudComponent implements AfterViewInit {
     
     let itemRegex = /^CUS-\d+$/;
     this.txtIdValue=this.txtId.nativeElement.value;
-    if(itemRegex.test(this.txtIdValue.toUpperCase()) ){
+    if(itemRegex.test(this.txtIdValue.toUpperCase())){
       this.customerService.searchCustomer(this.getCustomerId(this.txtIdValue)).subscribe(res=>{          
         this.enableTxtId();
         this.txtName.nativeElement.value=res.name;  

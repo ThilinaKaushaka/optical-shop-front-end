@@ -42,6 +42,9 @@ export class FrameComponent {
   selectedShape:FrameShape=FrameShape.NONE;
   shapeArray:FrameShape[]=Object.values(FrameShape);
 
+  itemId: number | null = null;
+
+
   changeMaterial(material:FrameMaterial):void{
     this.selectedMaterial=material;
   }

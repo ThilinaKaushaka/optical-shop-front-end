@@ -1,7 +1,7 @@
 export enum ChainClaspType {
-    RubberLoop = "RubberLoop",
-    Hook = "Hook",
-    Magnetic = "Magnetic",
-    ClipOn = "ClipOn",
-    NONE = "None"
+    RUBBER_LOOP = "RUBBER_LOOP",
+    HOOK = "HOOK",
+    MAGNETIC = "MAGNETIC",
+    CLIP_ON = "CLIP_ON",
+    NONE = "NONE"
 }

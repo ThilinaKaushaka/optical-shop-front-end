@@ -1,7 +1,7 @@
 export enum NailMaterial {
-    NONE = 'None',
-    STAINLESS_STEEL = 'StainlessSteel',
-    TITANIUM = 'Titanium',
-    BRASS = 'Brass',
-    ALUMINUM = 'Aluminum'
+    NONE = "NONE",
+    STAINLESS_STEEL = "STAINLESS_STEEL",
+    TITANIUM = "TITANIUM",
+    BRASS = "BRASS",
+    ALUMINUM = "ALUMINUM"
 }

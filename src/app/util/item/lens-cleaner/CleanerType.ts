@@ -1,7 +1,7 @@
 export enum CleanerType {
-    NONE = 'None',
-    SPRAY = 'Spray',
-    FOAM = 'Foam',
-    WIPES = 'Wipes',
-    LIQUID = 'Liquid'
+    NONE = "NONE",
+    SPRAY = "SPRAY",
+    FOAM = "FOAM",
+    WIPES = "WIPES",
+    LIQUID = "LIQUID"
 }

@@ -1,7 +1,7 @@
 export enum FrameGender {
-    NONE="None",
-    UNISEX = "Unisex",
-    MEN = "Men",
-    WOMEN = "Women",
-    KIDS = "Kids"
+    NONE = "NONE",
+    UNISEX = "UNISEX",
+    MEN = "MEN",
+    WOMEN = "WOMEN",
+    KIDS = "KIDS"
 }

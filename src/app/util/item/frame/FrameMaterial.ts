@@ -1,8 +1,8 @@
 export enum FrameMaterial {
-    NONE="None",
-    METAL = "Metal",
-    PLASTIC = "Plastic",
-    TITANIUM = "Titanium",
-    WOOD = "Wood",
-    CARBON_FIBER = "Carbon Fiber"
+    NONE = "NONE",
+    METAL = "METAL",
+    PLASTIC = "PLASTIC",
+    TITANIUM = "TITANIUM",
+    WOOD = "WOOD",
+    CARBON_FIBER = "CARBON_FIBER"
 }

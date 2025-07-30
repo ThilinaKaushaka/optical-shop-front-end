@@ -1,9 +1,9 @@
 export enum FrameShape {
-    NONE="None",
-    ROUND = "Round",
-    SQUARE = "Square",
-    RECTANGLE = "Rectangle",
-    OVAL = "Oval",
-    CAT_EYE = "Cat Eye",
-    AVIATOR = "Aviator"
+    NONE = "NONE",
+    ROUND = "ROUND",
+    SQUARE = "SQUARE",
+    RECTANGLE = "RECTANGLE",
+    OVAL = "OVAL",
+    CAT_EYE = "CAT_EYE",  
+    AVIATOR = "AVIATOR"
 }

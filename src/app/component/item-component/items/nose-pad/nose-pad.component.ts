@@ -25,6 +25,8 @@ selectedShape: NosePadShape = NosePadShape.NONE;
 selectedMountType: NosePadMountType = NosePadMountType.NONE;
 selectedMaterial: NosePadMaterial = NosePadMaterial.NONE;
 
+itemId: number | null = null;
+
 
 changeShape(shape: NosePadShape): void {
     this.selectedShape = shape;

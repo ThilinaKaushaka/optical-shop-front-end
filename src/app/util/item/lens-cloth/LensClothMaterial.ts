@@ -1,7 +1,7 @@
 export enum LensClothMaterial {
-    NONE = 'None',
-    MICROFIBER = 'Microfiber',
-    COTTON = 'Cotton',
-    SILK = 'Silk',
-    SYNTHETIC = 'Synthetic'
+    NONE = "NONE",
+    MICROFIBER = "MICROFIBER",
+    COTTON = "COTTON",
+    SILK = "SILK",
+    SYNTHETIC = "SYNTHETIC"
 }

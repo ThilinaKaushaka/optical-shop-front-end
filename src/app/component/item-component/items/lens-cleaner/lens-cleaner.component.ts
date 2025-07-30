@@ -18,6 +18,8 @@ export class LensCleanerComponent {
   selectedCleaner: CleanerType = CleanerType.NONE;
   cleanerTypeArray: CleanerType[] = Object.values(CleanerType);
 
+  itemId: number | null = null;
+
   
   changeCleanerType(cleaner: CleanerType): void {
       this.selectedCleaner = cleaner;

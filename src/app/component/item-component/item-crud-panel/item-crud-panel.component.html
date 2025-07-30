@@ -1,6 +1,7 @@
-<div class="crud group relative flex w-96 flex-col scale-[0.9] p-4  transition-all duration-1000 hover:scale-[0.95]">
 
-    <div class="absolute inset-px bg rounded-3xl grid"></div>
+<div class="rounded-3xl crud group relative flex w-96 flex-col scale-[0.9] p-4  transition-all duration-500 hover:scale-[0.909]">
+    
+
 
 
     <div class="">
@@ -76,7 +77,7 @@
                     class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
                     <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
 
-                        <li (click)="categoryChange(category)" *ngFor="let category of itemCategories"
+                        <li (click)="categoryChange(category,null)" *ngFor="let category of itemCategories"
                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                             {{category}}
                         </li>
@@ -88,7 +89,7 @@
         <div class="mb-4 grid grid-cols-6 gap-4 relative bottom-5">
             <div class="rounded-2xl bg-slate-900/50 p-3 col-span-4 h-16">
                 <div class="wave-group mt-4 relative bottom-4">
-                    <input #txtAddress type="text" required="" type="text"
+                    <input #txtItemId type="text" required="" type="text"
                         class="input border p-2 outline-none focus:ring-0 focus:border-gray-400">
                     <span class="bar"></span>
                     <label #lblAddress class="label">
@@ -111,16 +112,16 @@
             </div>
         </div>
 
-
+        
 
         <div class=" bg-slate-900/50 rounded-2xl dpl">
 
             <div class=" grid grid-cols-12 place-items-center relative bottom-2">
                 <div class="wave-group mt-6 col-span-5">
-                    <input #txtAddress type="text" required="" type="text"
+                    <input #txtName type="text" required="" type="text"
                         class=" input border p-2 outline-none focus:ring-0 focus:border-gray-400" style="width: 140px;">
                     <span class="bar"></span>
-                    <label #lblAddress class="label">
+                    <label #lblName class="label">
                         <span class="label-char" style="--index: 0">N</span>
                         <span class="label-char " style="--index: 1">a</span>
                         <span class="label-char " style="--index: 2">m</span>
@@ -130,10 +131,10 @@
                 </div>
 
                 <div class="wave-group mt-4 col-span-5">
-                    <input #txtAddress type="text" required="" type="text"
+                    <input #txtBrand type="text" required="" type="text"
                         class=" input border p-2 outline-none focus:ring-0 focus:border-gray-400" style="width: 140px;">
                     <span class="bar"></span>
-                    <label #lblAddress class="label">
+                    <label #lblBrand class="label">
                         <span class="label-char" style="--index: 0">B</span>
                         <span class="label-char " style="--index: 1">r</span>
                         <span class="label-char " style="--index: 2">a</span>
@@ -146,10 +147,10 @@
             <div class="grid grid-cols-12 place-items-center relative bottom-3">
 
                 <div class="wave-group mt-4 col-span-5">
-                    <input #txtAddress type="text" required="" type="number" min="0"
+                    <input #txtPrice type="text" required="" step="any" type="number" min="0"
                         class=" input border p-2 outline-none focus:ring-0 focus:border-gray-400" style="width: 140px;">
                     <span class="bar"></span>
-                    <label #lblAddress class="label">
+                    <label #lblPrice class="label">
                         <span class="label-char" style="--index: 0">R</span>
                         <span class="label-char " style="--index: 1">s</span>
                         <span class="label-char " style="--index: 2">&nbsp;</span>
@@ -159,10 +160,10 @@
                 </div>
 
                 <div class="wave-group mt-4 col-span-5">
-                    <input #txtAddress required="" type="number" min="0"
+                    <input #txtQty required="" type="number" min="0"
                         class=" input border p-2 outline-none focus:ring-0 focus:border-gray-400" style="width: 140px;">
                     <span class="bar"></span>
-                    <label #lblAddress class="label">
+                    <label #lblQty class="label">
                         <span class="label-char" style="--index: 0">Q</span>
                         <span class="label-char " style="--index: 1">u</span>
                         <span class="label-char " style="--index: 2">a</span>
@@ -216,7 +217,7 @@
             <div class="grid grid-cols-1 place-items-center mb-4">
                 <div>
                     <label for="message" class="avb">Discription</label>
-                    <textarea id="message" rows="4"
+                    <textarea #txtDescription rows="4"
                         class="mt-2 block p-2.5 w-93 h-20 text-sm text-gray-900  rounded-lg bg-transparent dark:placeholder-gray-400 dark:text-white focus:border-0 focus:border-transparent"
                         placeholder="Write your thoughts here..."></textarea>
                 </div>

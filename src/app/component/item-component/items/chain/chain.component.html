@@ -29,7 +29,7 @@
         </div>
 
         <div class="wave-group w-28 ml-4">
-            <input #txtChainId required="" type="number" class="w-24 input border p-2 outline-none focus:ring-0 focus:border-gray-400">
+            <input #txtChainLength required="" type="number" step="any" class="w-24 input border p-2 outline-none focus:ring-0 focus:border-gray-400">
             <span class="bar"></span>
             <label #lblAddress class="label">
                 <span class="label-char" style="--index: 0">L</span>
@@ -43,8 +43,8 @@
 
         <mat-form-field class="w-30 mt-2">
             <mat-label>Material</mat-label>
-            <mat-select>
-                <mat-option  [value]="selectedMaterial" (click)="changeMaterial(material)" *ngFor="let material of materialArray">{{material}}</mat-option>
+            <mat-select [(value)]="selectedMaterial">
+                <mat-option  [value]="material" (click)="changeMaterial(material)" *ngFor="let material of materialArray">{{material}}</mat-option>
             </mat-select>
         </mat-form-field>
 
@@ -54,15 +54,15 @@
 
         <mat-form-field class="w-40 mt-2">
             <mat-label>Material</mat-label>
-            <mat-select>
-                <mat-option  [value]="selectedClaspType" (click)="changeClaspType(clasp)" *ngFor="let clasp of claspTypeArray">{{clasp}}</mat-option>
+            <mat-select [(value)]="selectedClaspType">
+                <mat-option  [value]="clasp" (click)="changeClaspType(clasp)" *ngFor="let clasp of claspTypeArray">{{clasp}}</mat-option>
             </mat-select>
         </mat-form-field>
 
         <mat-form-field class="w-40 mt-2">
             <mat-label>Material</mat-label>
-            <mat-select>
-                <mat-option  [value]="selectedStyle" (click)="changeStyle(style)" *ngFor="let style of styleArray">{{style}}</mat-option>
+            <mat-select [(value)]="selectedStyle">
+                <mat-option  [value]="style" (click)="changeStyle(style)" *ngFor="let style of styleArray">{{style}}</mat-option>
             </mat-select>
         </mat-form-field>
 

@@ -30,6 +30,8 @@ export class ContactLensComponent {
   selectedType: ContactLensType = ContactLensType.NONE;
   typeArray: ContactLensType[] = Object.values(ContactLensType);
 
+  itemId: number | null = null;
+
   
   changeDuration(duration: ContactLensDuration): void {
     this.selectedDuration = duration;

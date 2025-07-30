@@ -1,7 +1,7 @@
 export enum LensMaterial {
-    NONE = "None",
-    PLASTIC = "Plastic",
-    GLASS = "Glass",
-    POLYCARBONATE = "Polycarbonate",
-    HIGH_INDEX = "High Index"
+    NONE = "NONE",
+    PLASTIC = "PLASTIC",
+    GLASS = "GLASS",
+    POLYCARBONATE ="POLYCARBONATE",
+    HIGH_INDEX = "HIGH_INDEX"
 }

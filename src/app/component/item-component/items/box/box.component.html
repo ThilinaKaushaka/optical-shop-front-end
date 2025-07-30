@@ -6,7 +6,7 @@
             <input #txtBoxId required="" type="text"
                 class="w-44 input border p-2 outline-none focus:ring-0 focus:border-gray-400">
             <span class="bar"></span>
-            <label #lblAddress class="label">
+            <label #lblBoxId class="label">
                 <span class="label-char" style="--index: 0">B</span>
                 <span class="label-char " style="--index: 1">o</span>
                 <span class="label-char " style="--index: 2">x</span>
@@ -40,16 +40,16 @@
 
         <mat-form-field class="w-44 mt-2">
             <mat-label>Material</mat-label>
-            <mat-select>
-                <mat-option [value]="selectedMaterial" (click)="changeMaterial(material)"
+            <mat-select [(value)]="selectedMaterial">
+                <mat-option [value]="material" (click)="changeMaterial(material)"
                     *ngFor="let material of materialArray">{{material}}</mat-option>
             </mat-select>
         </mat-form-field>
 
         <mat-form-field class="w-44 mt-2">
             <mat-label>Size</mat-label>
-            <mat-select>
-                <mat-option [value]="selectedSize" (click)="changeSize(size)"
+            <mat-select [(value)]="selectedSize">
+                <mat-option [value]="size" (click)="changeSize(size)"
                     *ngFor="let size of sizeArray">{{size}}</mat-option>
             </mat-select>
         </mat-form-field>

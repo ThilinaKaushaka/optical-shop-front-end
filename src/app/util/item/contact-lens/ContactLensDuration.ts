@@ -1,7 +1,7 @@
 export enum ContactLensDuration {
-    NONE = 'None',
-    DAILY = 'Daily',
-    BI_WEEKLY = 'Bi weekly',
-    MONTHLY = 'Monthly',
-    YEARLY = 'Yearly'
-  }
+  NONE = "NONE",
+  DAILY = "DAILY",
+  BI_WEEKLY = "BI_WEEKLY",
+  MONTHLY = "MONTHLY",
+  YEARLY = "YEARLY"
+}

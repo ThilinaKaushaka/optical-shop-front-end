@@ -1,8 +1,8 @@
 export enum BoxMaterial {
-    NONE = 'None',
-    PLASTIC = 'Plastic',
-    METAL = 'Metal',
-    LEATHER = 'Leather',
-    WOOD = 'Wood',
-    FABRIC = 'Fabric'
+    NONE = 'NONE',
+    PLASTIC = 'PLASTIC',
+    METAL = 'METAL',
+    LEATHER = 'LEATHER',
+    WOOD = 'WOOD',
+    FABRIC = 'FABRIC'
 }

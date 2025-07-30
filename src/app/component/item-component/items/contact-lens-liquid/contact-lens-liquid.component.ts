@@ -23,6 +23,9 @@ export class ContactLensLiquidComponent {
 selectedSolution: SolutionType = SolutionType.NONE;
 solutionTypeArray: SolutionType[] = Object.values(SolutionType);
 
+itemId: number | null = null;
+
+
 changeSolutionType(solution: SolutionType): void {
   this.selectedSolution = solution;
 }

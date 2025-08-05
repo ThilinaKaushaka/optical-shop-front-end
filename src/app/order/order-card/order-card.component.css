@@ -22,16 +22,18 @@
   .imgi{
     position: relative;
     bottom: 142px;
+    
   }
   
   
   .card .image-container img {
-    width: 160px;
-    height: 145px;
+    width: 140px;
+    height: 125px;
     -o-object-fit: cover;
     object-fit: cover;
     border-radius: inherit;
     margin-left: 30px;
+    margin-top: 14px;
   }
   
   .card .image-container .svg {

@@ -1,0 +1,58 @@
+<!-- From Uiverse.io by Li-Deheng --> 
+<div class="like-dislike-container">
+	<div class="tool-box">
+		<button class="btn-close">×</button>
+	</div>
+	<div>
+    <table class="text-[12px] leading-tight text-center">
+      <tr>
+        <td>
+          <span style="color: rgb(223, 164, 4);"><b><p>Item id</p></b></span>
+          <p>ITEM-{{item?.item?.id}}</p>
+          <br>
+        </td>
+
+
+        <td style="padding-left: 30px;">
+          <span style="color: rgb(223, 164, 4);"><p><b>Name</b></p></span>
+          <p>{{item?.item?.name}}</p>
+          <br>
+        </td>
+      
+        <td style="padding-left: 30px;">
+          <span style="color: rgb(223, 164, 4);"><p><b>Category</b></p></span>
+          <p>{{item?.item?.category}}</p>
+          <br>
+        </td>
+
+
+        <td style="padding-left: 30px;">
+          <span style="color: rgb(223, 164, 4);"><p><b>Brand</b></p></span>
+          <p>{{item?.item?.brand}}</p>
+          <br>
+        </td>
+      </tr>
+    </table>
+  </div>			
+	<div class="icons-box">
+		<div class="">
+			<img src="{{imageUrl}}" alt="" width="70px" height="70px">
+		</div>
+
+		<div>
+			<table>
+        <tr>
+          <td style="padding-left: 10px;">
+            <span style="color: rgb(223, 164, 4);"><p>Qty</p></span>
+            <p>{{item?.buyQty}}</p>
+          </td>
+
+          <td style="padding-left: 30px;">
+            <span style="color: rgb(223, 164, 4);"><p>Price</p></span>
+            <p>RS:{{item?.item?.price}}</p>
+          </td>
+        </tr>
+      </table>
+		</div>
+	</div>
+</div>

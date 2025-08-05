@@ -8,7 +8,7 @@ import { EmployeeNavPanelComponent } from "./nav-panels/employee-nav-panel/emplo
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports: [AdminNavPanelComponent, EmployeeNavPanelComponent]
+  imports: [AdminNavPanelComponent, EmployeeNavPanelComponent, LogInFormComponent]
 })
 export class AppComponent implements AfterViewInit,OnInit {
 

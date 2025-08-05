@@ -1,0 +1,212 @@
+<div class="grid grid-cols-12 grid-rows-1 h-full">
+
+    <div class="grid col-span-8 ml-8">
+        <div class="grid grid-cols-1 grid-rows-2 w-96">
+
+            <div class=" mt-1  dark:bg-gray-700 h-12 w-full rounded-md grid grid-cols-12">
+                <span class="text-gray-100 font-bold text-sm col-span-1 mt-3 ml-7">ORDER- </span>
+                <input type="text" #txtOrderId id="zip-input" aria-describedby="helper-text-explanation"
+                    class="mt-2 col-span-7 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-8 ml-11 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="order id" required />
+                <button type="button" (click)="searchOrder(true)"
+                    class="mt-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm h-8 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 col-span-3">search</button>
+            </div>
+
+            <div class="mt-1  dark:bg-gray-700 h-12 w-full rounded-md grid grid-cols-12">
+                <span class="text-gray-100 font-bold text-sm col-span-1 mt-3 ml-7">CUS- </span>
+                <input type="text" #txtCusId id="zip-input" aria-describedby="helper-text-explanation"
+                    class="mt-2 col-span-7 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-8 ml-11 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="customer id" required />
+                <button type="button" (click)="searchOrder(false)"
+                    class="mt-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm h-8 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 col-span-3">search</button>
+            </div>
+
+            <div class="mt-1">
+
+                <div id="date-range-picker" date-rangepicker class="flex items-center">
+                    <div class="relative">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                            </svg>
+                        </div>
+                        <input id="datepicker-range-start" name="start" type="text" #txtStartDate
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Select date start">
+                    </div>
+                    <span class="mx-4 text-gray-500">to</span>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                            </svg>
+                        </div>
+                        <input id="datepicker-range-end" name="end" type="text" #txtEndDate
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Select date end">
+                    </div>
+                    <div>
+                        <button type="submit" (click)="search()"
+                            class="p-2.5 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                            </svg>
+                            <span class="sr-only">Search</span>
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="mt-5">
+
+            <div class="w-[690px]">
+
+
+                <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                        <caption
+                            class="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+                            Order
+                            <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
+
+                        </caption>
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            <tr>
+                                <th scope="col" class="px-6 py-3">
+                                    Order Id
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Date
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Time
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Cus Id
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Total
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    <span class="sr-only">Edit</span>
+                                </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr *ngFor="let order of searchOrderArray"
+                                class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
+                                <th scope="row"
+                                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    {{order.id}}
+                                </th>
+                                <td class="px-6 py-4">
+                                    {{order.date}}
+                                </td>
+                                <td class="px-6 py-4">
+                                    {{order.time}}
+                                </td>
+                                <td class="px-6 py-4">
+                                    {{order.customerId}}
+                                </td>
+                                <td class="px-6 py-4">
+                                    {{order.total}}
+                                </td>
+                                <td class="px-6 py-4">
+                                    <button (click)="setOrderDetails(order.orderDetails)" type="button"
+                                        class="px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">view</button>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="grid col-span-4">
+
+        <div class="mt-42 mr-12 hidden" #orderDetailsTable>
+            <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <caption
+                        class="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+                        Order Details
+                        <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
+
+                    </caption>
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">
+                                Item Id
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                QTY
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Unit Price
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Total
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr *ngFor="let detail of orderDetails"
+                            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
+                            <th scope="row"
+                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                {{detail.itemId}}
+                            </th>
+                            <td class="px-6 py-4">
+                                {{detail.quantity}}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{detail.unitPrice}}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{detail.quantity!=null && detail.unitPrice!=null ? detail.quantity *
+                                detail.unitPrice:"cant
+                                calculate"}}
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+</div>

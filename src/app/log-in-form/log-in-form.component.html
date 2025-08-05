@@ -1,3 +1,8 @@
+
+<a routerLink="home">
+    xxxx
+</a>
+
 <div class="container grid grid-cols-12 h-screen bg-gradient-to-r from-cyan-200 from-cyan-300 from-cyan-800">
     <div class="col-span-7  not-first:xx hidden md:block mt-auto mb-auto ml-32">
         <div class="container">
@@ -12,8 +17,9 @@
                 <input required="" class="input" type="email" name="email" id="email" placeholder="E-mail">
                 <input required="" class="input" type="password" name="password" id="password" placeholder="Password">
                 <span class="forgot-password"><a href="#">Forgot Password ?</a></span>
-                <input class="login-button" type="submit" value="Log  In" id="btn-log-in">
-            </form>
+                <input class="login-button" type="submit" value="Log  In" id="btn-log-in" (click)="logIn()">
+                
+                </form>
             <div class="social-account-container ">
                 <span class="title">connect us</span>
                 <div class="social-accounts">

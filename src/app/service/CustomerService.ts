@@ -21,4 +21,11 @@ export class CustomerService{
         return this.http.post(`${env.baseUrl}/customer/add`,customerAdd);
     }
 
+    getAll():Observable<Customer[]>{
+        return this.http.get<Customer[]>(`${env.baseUrl}/customer/get-all`);
+    }
+
+        
+    
+
 }

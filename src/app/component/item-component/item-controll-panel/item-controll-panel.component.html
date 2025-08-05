@@ -4,9 +4,80 @@
         <app-item-crud-panel></app-item-crud-panel>
     </div>
 
-    <div>
-        
+<div>
+
+
+
+
+
+<button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">{{selectedCategory!=null?selectedCategory:"Category"}}<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+</svg>
+</button>
+
+<!-- Dropdown menu -->
+<div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
+    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+      <li *ngFor="let category of categoryList">
+        <p (click)="changeSelectedCategory(category)" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{{category}}</p>
+      </li>
+      
+    </ul>
+</div>
+
+        <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
+
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+                        <th scope="col" class="px-6 py-3">
+                            Item Id
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            {{selectedCategory!=null?selectedCategory+"-Id":"ID"}}
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Name
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Brand
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Qty
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Price
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let iteml of itemList"
+                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            {{"ITEM-"+iteml.id}}
+                        </th>
+                        <td class="px-6 py-4">
+                            {{iteml.category+"-"+iteml.itemObject.id}}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{iteml.name}}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{iteml.brand}}
+                        </td>
+                        
+                        <td class="px-6 py-4">
+                            {{iteml.qty}}
+                        </td>
+                        <td class="px-6 py-4 text-right">
+                            {{iteml.price}}    
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
     </div>
 
 </div>
-

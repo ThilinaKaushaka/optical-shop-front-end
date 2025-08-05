@@ -20,8 +20,48 @@ export class ItemService{
     }
 
     getAllLens(): Observable<ItemDto[]> {
-
-        
         return this.http.get<ItemDto[]>(`${env.baseUrl}/item/get-lens`);
     }
+
+    getAllBox():Observable<ItemDto[]>{
+        return this.http.get<ItemDto[]>(`${env.baseUrl}/item/get-box`);
+    }
+    
+    getAllChain():Observable<ItemDto[]>{
+        return this.http.get<ItemDto[]>(`${env.baseUrl}/item/get-chain`);
+    }
+
+    getAllContactLens():Observable<ItemDto[]>{
+        return this.http.get<ItemDto[]>(`${env.baseUrl}/item/get-contact-lens`);
+    }
+
+    getAllContactLensLiquid():Observable<ItemDto[]>{
+        return this.http.get<ItemDto[]>(`${env.baseUrl}/item/get-contact-lens-liquid`);
+    }
+
+    getAllFrame():Observable<ItemDto[]>{
+        return this.http.get<ItemDto[]>(`${env.baseUrl}/item/get-frame`);
+    }
+
+    getAllLensCleaner():Observable<ItemDto[]>{
+        return this.http.get<ItemDto[]>(`${env.baseUrl}/item/get-lens-cleaner`);
+    }
+
+    getAllLensCloth():Observable<ItemDto[]>{
+        return this.http.get<ItemDto[]>(`${env.baseUrl}/item/get-lens-cloth`);
+    
+    }
+    
+    getAllNail():Observable<ItemDto[]>{
+        return this.http.get<ItemDto[]>(`${env.baseUrl}/item/get-nail`);
+    }
+
+    getAllNosePad():Observable<ItemDto[]>{
+        return this.http.get<ItemDto[]>(`${env.baseUrl}/item/get-nose-pad`);
+    }
+    
+
+    
+
+
 }

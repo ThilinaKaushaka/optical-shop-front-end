@@ -12,6 +12,7 @@ import { NailDto } from '../../model/item/items/NailDto';
 import { NosePadDto } from '../../model/item/items/NosePadDto';
 import { ContactLensDto } from '../../model/item/items/ContactLensDto';
 import { ItemDtoBuy } from '../../model/item/ItemDtoBuy';
+import { GetImageUrl } from '../../function/getImageUrl';
 
 @Component({
   selector: 'app-order-card',
@@ -19,9 +20,17 @@ import { ItemDtoBuy } from '../../model/item/ItemDtoBuy';
   templateUrl: './order-card.component.html',
   styleUrl: './order-card.component.css'
 })
-export class OrderCardComponent implements AfterViewInit{
+export class OrderCardComponent implements OnInit,AfterViewInit{
+  constructor(){}
+  ngOnInit(): void {
+    this.imageUrl=new GetImageUrl().getUrl(this.item?.category as ItemCategory);
+    console.log(this.imageUrl);
+  }
 
-   public quantity: number = 0;
+  public imageUrl ="";
+
+  
+  public quantity: number = 0;
 
   ngAfterViewInit(): void {
     this.printDetails();
@@ -41,7 +50,8 @@ export class OrderCardComponent implements AfterViewInit{
 
 
   increaseQuantity(): void {
-  
+    console.log(this.imageUrl);
+    
     if (this.item && this.quantity < this.maxQty) {
       this.quantity++;
     }
@@ -57,6 +67,8 @@ export class OrderCardComponent implements AfterViewInit{
   buyItem():void{
     const itemToBuy = new ItemDtoBuy(this.item, this.quantity);
     this.itemAddedToCart.emit(itemToBuy);
+    this.maxQty-=this.quantity;
+    this.quantity=0;
   }
 
   printDetails():void{
